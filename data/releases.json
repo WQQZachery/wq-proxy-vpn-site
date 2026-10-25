@@ -1,0 +1,70 @@
+{
+  "source": "https://api.github.com/repos/WQQZachery/wq-s-vpn-proxy/releases",
+  "repo": "WQQZachery/wq-s-vpn-proxy",
+  "fetched_at": "2026-10-25T06:09:06.422Z",
+  "releases": [
+    {
+      "tag": "v1.3.0",
+      "version": "1.3.0",
+      "name": "WQ's Proxy VPN 1.3.0",
+      "prerelease": false,
+      "published_at": "2026-10-25T05:38:40Z",
+      "html_url": "https://github.com/WQQZachery/wq-s-vpn-proxy/releases/tag/v1.3.0",
+      "target_commitish": "main",
+      "body": "## WQ's Proxy VPN 1.3.0\n\n### 新功能\n- **自定义分组**：可以新建、重命名、删除分组，用勾选或「移到分组」把节点放进去；分组方式新增「自定义」。订阅刷新后节点仍留在原分组\n- **按分组检测**：「检测…」可以选全部节点、当前筛选结果、某个分组或某个自定义分组；每个分组标题上有「检测本组」按钮\n- **一键删除失效节点**：删除最近一次检测失败或超时的节点，删除前会列出来让你确认\n- **风险节点**：跳过证书校验的节点标为「高风险」，明文或不加密的节点标为「风险」，可以按风险筛选；连接前需要确认，设置里可以允许所有风险节点直接连接\n- **AbuseIPDB**：内置默认 Key；填了自己的 Key 就优先用自己的\n\n### 修复（1.1.1–1.2.1）\n- uTLS 指纹 `fp=unsafe` 导致内核启动失败\n- VPN 运行时界面重建后，所有节点检测都显示「不适用」\n- 进入节点页自动检测改为设置项，默认关闭\n- REALITY 节点被错误去重\n- 新增：分享 / 二维码导出、扫码导入、点击连接时全屏水波和随状态变化的颜色\n\n### 安装\n- 只有 arm64-v8a 版本，用的是 debug 签名\n- 从 **1.0.0 / 1.1.0** 升级前要先卸载旧版，因为签名证书变了；从 1.1.1 及以后的版本可以直接覆盖安装\n- SHA-256：`15317b53b27ec36384798c12857b0777b482f2a3b5fefe5cc75d9d7a98877ba6`",
+      "assets": [
+        {
+          "name": "WQs-Proxy-VPN-1.3.0-arm64-v8a.apk",
+          "size": 32332951,
+          "sha256": "15317b53b27ec36384798c12857b0777b482f2a3b5fefe5cc75d9d7a98877ba6",
+          "url": "https://github.com/WQQZachery/wq-s-vpn-proxy/releases/download/v1.3.0/WQs-Proxy-VPN-1.3.0-arm64-v8a.apk",
+          "arch": "arm64-v8a",
+          "content_type": "application/vnd.android.package-archive",
+          "updated_at": "2026-10-25T05:38:53Z"
+        }
+      ]
+    },
+    {
+      "tag": "v1.1.0",
+      "version": "1.1.0",
+      "name": "WQ's Proxy VPN 1.1.0",
+      "prerelease": false,
+      "published_at": "2026-10-24T12:02:26Z",
+      "html_url": "https://github.com/WQQZachery/wq-s-vpn-proxy/releases/tag/v1.1.0",
+      "target_commitish": "35dba15e72b0121b8ede0824199f51aef9de836a",
+      "body": "## WQ's Proxy VPN 1.1.0\n\nUI 与核心体验升级。原有 VPN 核心（Kotlin VpnService、sing-box/libbox、节点解析与订阅、路由、安全存储、日志脱敏）未改动。\n\n### 新功能与改进\n- **连接动效**：准备 / 连接中 / 已连接 / 断开中 / 失败五种状态，由真实 VPN 状态驱动；防重复点击，连接中可取消；支持系统“减少动态效果”。\n- **实时速度曲线**：基于 sing-box 真实流量计数（约 500ms 采样），平滑滚动，不外推、不伪造数据；显示下载/上传、峰值、累计流量。\n- **节点自动检测**：进入节点页自动检测，并发 4、30 秒冷却、2 分钟结果复用，可取消/重测；结果区分“代理请求 / TLS 握手 / 仅 TCP”，Hysteria2/TUIC 未连接时标记“不适用”。\n- **IP 信誉（AbuseIPDB）**：出口 IP 信誉分、举报数、ISP、国家、Tor 等字段与中文说明；API Key 存在安全存储中。\n- **Speedtest 风格测速**：M-Lab ndt7（默认）+ Cloudflare，按实测延迟选服务器，可手动切换；显示延迟、抖动、下载、上传。TCP 测速无法可靠测丢包，界面如实显示“不支持”。\n- **水波底部导航**、统一视觉、大字体/小屏布局修复。\n\n### 下载\nAPK（arm64-v8a，27,938,256 字节）：\nhttps://github.com/WQQZachery/wq-s-vpn-proxy/raw/refs/heads/apk/WQs-Proxy-VPN-1.1.0-arm64-v8a.apk\n\nSHA-256：`7323699436e0c08982e7fca06dfe79762fbc7ca264f59ab4e890ebf96c0d2374`\n\n与 1.0.0 使用同一 debug 签名，可直接覆盖安装。\n\n### 已知限制\n- 当前为 debug 签名，非正式发布签名。\n- 仅支持 arm64 设备。\n- Cloudflare 测速端点可能因连续测试触发 HTTP 429 限流。\n- 测试：`flutter analyze` 0 错误 0 警告；`flutter test` 96/96 通过。\n\n详见 `docs/UX_UPGRADE_1.1.0.md`、`docs/TEST_REPORT.md`。",
+      "assets": [
+        {
+          "name": "WQs-Proxy-VPN-1.1.0-arm64-v8a.apk",
+          "size": 27938256,
+          "sha256": "7323699436e0c08982e7fca06dfe79762fbc7ca264f59ab4e890ebf96c0d2374",
+          "url": "https://github.com/WQQZachery/wq-s-vpn-proxy/releases/download/v1.1.0/WQs-Proxy-VPN-1.1.0-arm64-v8a.apk",
+          "arch": "arm64-v8a",
+          "content_type": "application/vnd.android.package-archive",
+          "updated_at": "2026-10-25T01:25:24Z"
+        }
+      ]
+    },
+    {
+      "tag": "v1.0.0",
+      "version": "1.0.0",
+      "name": "WQ's Proxy VPN 1.0.0",
+      "prerelease": false,
+      "published_at": "2026-10-24T08:43:35Z",
+      "html_url": "https://github.com/WQQZachery/wq-s-vpn-proxy/releases/tag/v1.0.0",
+      "target_commitish": "main",
+      "body": "## WQ's Proxy VPN 1.0.0\r\n\r\n原 ProxyPilot Mobile 正式更名为 **WQ's Proxy VPN**。\r\n\r\n- 桌面图标名称、应用标题、首页、关于页、VPN 通知与 VPN 会话名均显示 `WQ's Proxy VPN`\r\n- 版本：1.0.0（versionCode 1）\r\n- Android 包名保持不变：`dev.proxypilot.proxypilot_mobile`（可覆盖安装旧版，数据保留）\r\n- VPN 核心（sing-box 1.14.3 / libbox）、协议支持、路由与检测逻辑未改动\r\n\r\n### 安装包\r\n\r\n[WQs-Proxy-VPN-1.0.0-arm64-v8a.apk](https://github.com/WQQZachery/wq-s-vpn-proxy/raw/refs/heads/apk/WQs-Proxy-VPN-1.0.0-arm64-v8a.apk)（存放于 `apk` 分支）\r\n- 架构：仅 arm64-v8a\r\n- 大小：27,891,808 bytes\r\n- SHA-256：`21fb72896ef7f593bcd99d1132c4adc2f25c735277d8b4cc4b7fb19ea0ea89a1`\r\n- 签名：Flutter/Android **debug** 签名（非正式发布签名）\r\n\r\n### 测试情况\r\n\r\n- `flutter analyze`：0 error / 0 warning（剩余为 info 级提示）\r\n- `flutter test`：59/59 通过（含品牌名称测试）\r\n- 配置生成经 sing-box 1.14.3 `check` 校验\r\n- **未执行**：Android 真机/模拟器安装、VPN 实际连接、网络切换测试\r\n\r\n### 许可\r\n\r\n本应用包含 sing-box（GPL-3.0-or-later），整体按 GPL-3.0-or-later 分发，见 LICENSE、COPYING、THIRD_PARTY_NOTICES.md。\r\n\r\n**Full Changelog**: https://github.com/WQQZachery/wq-s-vpn-proxy/commits/v1.0.0",
+      "assets": [
+        {
+          "name": "WQs-Proxy-VPN-1.0.0-arm64-v8a.apk",
+          "size": 27891808,
+          "sha256": "21fb72896ef7f593bcd99d1132c4adc2f25c735277d8b4cc4b7fb19ea0ea89a1",
+          "url": "https://github.com/WQQZachery/wq-s-vpn-proxy/releases/download/v1.0.0/WQs-Proxy-VPN-1.0.0-arm64-v8a.apk",
+          "arch": "arm64-v8a",
+          "content_type": "application/vnd.android.package-archive",
+          "updated_at": "2026-10-25T01:26:28Z"
+        }
+      ]
+    }
+  ]
+}

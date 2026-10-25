@@ -1,0 +1,24 @@
+{
+  "name": "wq-proxy-vpn-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Bilingual product website for the Android app WQ's Proxy VPN (static, Cloudflare Workers Static Assets)",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "fetch-releases": "node scripts/fetch-releases.mjs",
+    "gen-deps": "node scripts/gen-deps.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "dev": "npm run build && wrangler dev",
+    "screenshots": "node scripts/screenshots.mjs"
+  },
+  "devDependencies": {
+    "axe-core": "^4.14.0",
+    "playwright": "^1.64.1",
+    "wrangler": "^4.152.0"
+  }
+}

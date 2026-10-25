@@ -1,0 +1,28 @@
+{
+  "_comment": "Summaries written for this site. Release notes themselves come from data/releases.json (GitHub). zhSummary is optional (the original body is already Chinese). Unreleased builds are based on git log and docs/FIX_REPORT_1.1.1.md / docs/FEATURES_1.2.0.md in the app repository.",
+  "summaries": {
+    "v1.3.0": {
+      "en": "- **Custom groups**: create, rename and delete groups and move nodes into them; nodes keep their group after a subscription refresh.\n- **Test by group**: “Test…” can target all nodes, the current filter, a group or a custom group; each group header has a “Test this group” button.\n- **Remove failed nodes**: deletes nodes whose last test failed or timed out, after listing them for confirmation.\n- **Risky nodes**: nodes that skip certificate verification are marked high risk, plain-text / unencrypted nodes are marked risk; both can be filtered and require confirmation before connecting; a setting can allow all risky nodes.\n- **AbuseIPDB**: a default key is built in; your own key takes priority when set.\n- Includes the fixes from the unreleased 1.1.1–1.2.1 builds: the `fp=unsafe` uTLS fingerprint crash, node tests showing “not applicable” after the UI was rebuilt while the VPN ran, auto-testing made opt-in (off by default), REALITY nodes wrongly treated as duplicates, plus share / QR export, QR import and the full-screen connect animation.\n- Install notes: arm64-v8a only, debug-signed; uninstall first when coming from 1.0.0 / 1.1.0 (certificate changed); installs over 1.1.1 and later."
+    },
+    "v1.1.0": {
+      "en": "UI and core-experience upgrade; the VPN core itself (Kotlin VpnService, sing-box/libbox, parsing, subscriptions, routing, secure storage, log redaction) was not changed.\n\n- **Connect animation** driven by the real VPN state (preparing / connecting / connected / disconnecting / failed), with double-tap protection, cancel while connecting and reduce-motion support.\n- **Live speed chart** from real sing-box traffic counters (~500 ms samples), smooth scrolling without extrapolation.\n- **Automatic node tests** on the Nodes screen (concurrency 4, 30 s cooldown, 2 min result reuse); results distinguish proxy request / TLS handshake / TCP only.\n- **IP reputation (AbuseIPDB)** with the API key kept in secure storage.\n- **Speedtest-style speed test** with M-Lab ndt7 and Cloudflare.\n- Ripple bottom navigation, unified visuals and large-font / small-screen layout fixes.\n- Known limitations stated in the notes: debug signing, arm64 only, Cloudflare speed endpoints may rate-limit (HTTP 429). The notes say it can be installed over 1.0.0 with the same debug signature — **this site's check found the two certificates differ** (see Download → signing certificates)."
+    },
+    "v1.0.0": {
+      "en": "ProxyPilot Mobile renamed to **WQ's Proxy VPN**: launcher name, app title, home and about screens, VPN notification and VPN session name. Version 1.0.0 (versionCode 1); package name unchanged (`dev.proxypilot.proxypilot_mobile`). The VPN core (sing-box 1.14.3 / libbox), protocols, routing and diagnostics were not changed. arm64-v8a only, debug-signed. The notes record that on-device installation, real VPN connections and network-switch tests were **not performed**."
+    }
+  },
+  "unreleased": {
+    "1.2.1": {
+      "zh": "- VPN 在后台运行而界面被系统回收重建后，恢复运行会话（之前所有节点检测都会显示「不适用」）。\n- 「进入节点页自动检测」改为设置项，默认关闭。\n- 分组显示改进；点击连接时全屏水波与随状态变化的颜色。",
+      "en": "- Restores the VPN session after the UI is recreated while the VPN keeps running (previously every node test showed “not applicable”).\n- Auto-testing on the Nodes screen became a setting, off by default.\n- Visible grouping improvements; full-screen ripple and state-dependent tint when connecting."
+    },
+    "1.2.0": {
+      "zh": "- 节点分组与排序（按来源 / 按协议；默认 / 延迟 / 名称）。\n- 系统分享与二维码导出。\n- 扫码导入与从相册图片识别（mobile_scanner，内置 Google ML Kit 模型；新增 CAMERA 权限）。\n- 连接中波纹；内核 30 秒未启动则判定「连接超时」。",
+      "en": "- Node grouping and sorting (by source / protocol; default / latency / name).\n- Share-sheet and QR-code export.\n- QR import from the camera or a gallery image (mobile_scanner with the bundled Google ML Kit model; adds the CAMERA permission).\n- Ripple while connecting; a 30-second start timeout reports “connection timed out”."
+    },
+    "1.1.1": {
+      "zh": "- 修复 uTLS 指纹 `fp=unsafe` 等不支持的值导致内核启动失败。\n- 内核报错中的 `outbound[N]` 标注为具体节点名。\n- 节点导出：分享链接 / Base64 订阅（复制前有隐私提示）。\n- 签名证书更换为 8108…5cc6，无法覆盖安装 1.1.0 及以前版本。",
+      "en": "- Fixes core start-up failures caused by unsupported uTLS fingerprints such as `fp=unsafe`.\n- Core errors mentioning `outbound[N]` now name the affected node.\n- Node export as share links / Base64 subscription (with a privacy prompt before copying).\n- Signing certificate changed to 8108…5cc6, so it cannot be installed over 1.1.0 or earlier."
+    }
+  }
+}

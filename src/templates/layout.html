@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="{{htmlLang}}" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#070a14">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+{{{seoLinks}}}<meta property="og:type" content="website">
+<meta property="og:site_name" content="WQ's Proxy VPN">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:locale" content="{{ogLocale}}">
+{{{ogExtra}}}<meta name="twitter:card" content="{{twitterCard}}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="{{cssPath}}">
+<script src="{{earlyJsPath}}"></script>
+<script src="{{jsPath}}" defer></script>
+</head>
+<body data-page="{{pageId}}" data-lang="{{langKey}}">
+<a class="skip-link" href="#main">{{skip}}</a>
+<div class="ambient" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{homeHref}}">
+      <img class="brand-mark" src="/favicon.svg" width="28" height="28" alt="">
+      <span class="brand-name">WQ's Proxy VPN</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+      <span class="nav-toggle-label">{{menuLabel}}</span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="{{navLabel}}">
+      <ul class="nav-list">
+{{{navItems}}}
+      </ul>
+      <a class="lang-switch" href="{{altHref}}" hreflang="{{altHreflang}}" lang="{{altHreflang}}" data-set-lang="{{altLangKey}}" aria-label="{{altAria}}">{{altText}}</a>
+    </nav>
+  </div>
+</header>
+{{{suggestBanner}}}
+<main id="main" class="site-main" tabindex="-1">
+{{{body}}}
+</main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <p class="footer-name">WQ's Proxy VPN</p>
+      <p class="muted">{{footerTagline}}</p>
+      <p class="muted small">{{footerLicense}}</p>
+    </div>
+    <ul class="footer-links">
+{{{footerLinks}}}
+    </ul>
+  </div>
+  <div class="container">
+    <p class="muted small footer-note">{{footerDisclaimer}}</p>
+  </div>
+</footer>
+</body>
+</html>

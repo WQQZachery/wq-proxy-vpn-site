@@ -1,0 +1,26 @@
+{
+  "_comment": "Hand-curated facts about the app, each verified against the app repository (see docs/TEST_REPORT.md for how). Release file data (names, sizes, SHA-256, URLs) is NOT here: it comes from data/releases.json.",
+  "name": "WQ's Proxy VPN",
+  "repo": "https://github.com/WQQZachery/wq-s-vpn-proxy",
+  "repoSlug": "WQQZachery/wq-s-vpn-proxy",
+  "sourceRef": "v1.3.0",
+  "appCommit": "d6ed8a52d157c576cfdb537904929de3b6ca9290",
+  "appVersion": "1.3.0+6",
+  "packageName": "dev.proxypilot.proxypilot_mobile",
+  "minSdk": 24,
+  "targetSdk": 36,
+  "abi": "arm64-v8a",
+  "singBox": "1.14.3",
+  "gomobile": "v0.1.13",
+  "auditedOn": "2026-10-25",
+  "releaseMeta": {
+    "v1.3.0": { "commit": "d6ed8a52d157c576cfdb537904929de3b6ca9290", "signing": "debug", "certSha256": "81081482aa537a23c6f8e1e6fa048b011f35388cd10d411b64c9b86906c15cc6" },
+    "v1.1.0": { "commit": "35dba15e72b0121b8ede0824199f51aef9de836a", "signing": "debug", "certSha256": "43000125101c01aa325eaee94c381fe34181dbd971231b8d39806bc39a4e0597" },
+    "v1.0.0": { "commit": "9180acd88fe1cab70615e05021fbc8fcf510612c", "signing": "debug", "certSha256": "2805576cf662b984739c5e4dc73426cc018022543a970e4de5db35a3e614b6ef" }
+  },
+  "unreleased": [
+    { "version": "1.2.1", "commit": "a9fb452d4bc48ae69b08f97dfb052ee36fd7572b", "doc": null },
+    { "version": "1.2.0", "commit": "6614f8bf2ec75e8cd5ae5ea36b8150ae4060259a", "doc": "docs/FEATURES_1.2.0.md" },
+    { "version": "1.1.1", "commit": "43dcccbba487d0fff45bd406fc1ccfb886205d3b", "doc": "docs/FIX_REPORT_1.1.1.md" }
+  ]
+}

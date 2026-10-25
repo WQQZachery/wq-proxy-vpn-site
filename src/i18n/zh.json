@@ -1,0 +1,350 @@
+{
+  "htmlLang": "zh-CN",
+  "ogLocale": "zh_CN",
+  "prefix": "",
+  "siteName": "WQ's Proxy VPN",
+  "skip": "跳到主要内容",
+  "nav": {
+    "label": "主导航",
+    "home": "首页",
+    "download": "下载",
+    "changelog": "更新日志",
+    "docs": "帮助文档",
+    "privacy": "隐私政策",
+    "licenses": "开源许可",
+    "menu": "菜单",
+    "source": "源代码"
+  },
+  "langSwitch": {
+    "text": "English",
+    "aria": "切换到英文版本（English）",
+    "hreflang": "en"
+  },
+  "suggest": {
+    "text": "This site is also available in English.",
+    "go": "View in English",
+    "dismiss": "Stay in Chinese",
+    "aria": "Language suggestion"
+  },
+  "footer": {
+    "tagline": "基于 Flutter 与 sing-box 的开源 Android 代理 / VPN 客户端。",
+    "license": "应用以 GPL-3.0-or-later 发布。本站不托管安装包，所有下载均指向 GitHub Releases。",
+    "issues": "问题反馈（GitHub Issues）",
+    "repo": "GitHub 仓库",
+    "disclaimer": "本站内容依据应用源码（{ref}，提交 {commit}）核对；标注「待验证」的内容尚无真机测试记录。"
+  },
+  "common": {
+    "pending": "待验证",
+    "audit": "待审计",
+    "evidence": "源码依据",
+    "external": "（在新窗口打开）",
+    "copy": "复制",
+    "copied": "已复制",
+    "copyFail": "复制失败，请手动选择",
+    "notProvided": "暂不提供",
+    "bytes": "字节",
+    "toc": "本页目录",
+    "updated": "最后更新",
+    "backTop": "回到顶部"
+  },
+  "meta": {
+    "home": {
+      "title": "WQ's Proxy VPN — 基于 Flutter + sing-box 的 Android 代理客户端",
+      "description": "WQ's Proxy VPN 是一个开源（GPL-3.0-or-later）的 Android 代理 / VPN 客户端，界面使用 Flutter，代理核心为 sing-box 1.14.3。支持 8 种协议、订阅与二维码导入、规则分流和检测工具。"
+    },
+    "download": {
+      "title": "下载中心 — WQ's Proxy VPN",
+      "description": "下载 WQ's Proxy VPN Android APK（arm64-v8a，debug 签名）。每个版本列出文件大小、SHA-256 校验值与签名证书指纹，下载链接直接指向 GitHub Releases。"
+    },
+    "changelog": {
+      "title": "版本历史与更新日志 — WQ's Proxy VPN",
+      "description": "WQ's Proxy VPN 各版本的发布日期、更新说明、已知问题以及对应源码提交。内容来自 GitHub Releases。"
+    },
+    "docs": {
+      "title": "安装教程与帮助中心 — WQ's Proxy VPN",
+      "description": "如何安装 WQ's Proxy VPN APK、授予 VPN 与通知权限、导入节点与订阅、选择路由模式、使用检测中心与测速，以及常见问题排查。"
+    },
+    "privacy": {
+      "title": "隐私政策 — WQ's Proxy VPN",
+      "description": "WQ's Proxy VPN Android 应用的隐私政策：基于源码审计，说明应用在本地保存哪些数据、何时访问哪些第三方服务、发送什么信息，以及应用内置的 Google ML Kit 组件。"
+    },
+    "licenses": {
+      "title": "开源许可证与第三方声明 — WQ's Proxy VPN",
+      "description": "WQ's Proxy VPN 的 GPL-3.0-or-later 许可说明、sing-box 1.14.3 对应源码与构建脚本、Flutter/Dart 依赖许可证清单，以及当前尚未解决的许可证缺口。"
+    },
+    "notFound": {
+      "title": "页面不存在 — WQ's Proxy VPN",
+      "description": "找不到你要访问的页面。"
+    }
+  },
+  "home": {
+    "eyebrow": "Android 代理 / VPN 客户端 · 开源",
+    "title": "WQ's Proxy VPN",
+    "tagline": "基于 Flutter 与 sing-box 的 Android 代理 / VPN 客户端。",
+    "lead": "导入你自己的节点或订阅，由 sing-box {singbox} 内核在手机上建立 VPN 隧道。应用本身不提供节点、不需要注册账号，源代码以 GPL-3.0-or-later 公开。",
+    "ctaDownload": "下载 v{version}",
+    "ctaSource": "查看源代码",
+    "ctaDocs": "安装教程",
+    "chips": {
+      "version": "当前版本 v{version}",
+      "abi": "仅 arm64-v8a",
+      "android": "Android 7.0+（minSdk 24）",
+      "signing": "debug 签名",
+      "license": "GPL-3.0-or-later"
+    },
+    "statusTitle": "测试状态",
+    "statusText": "应用通过了开发机上的单元测试与 sing-box 配置校验，但 VPN 实际连接、各协议互通、扫码等功能**尚未形成真机测试记录**，均标注为「待验证」。安装包使用 debug 签名，不是正式发布签名。",
+    "featuresTitle": "已在源码中确认的功能",
+    "featuresLead": "以下每一项都能在 {ref} 的源码中找到对应实现，点击「源码依据」可直接查看文件。这只说明功能已经实现，不代表已经在真机上逐项验证。",
+    "features": [
+      {
+        "title": "8 种代理协议",
+        "text": "Shadowsocks（含 2022-blake3 系列加密）、VMess、VLESS（支持 REALITY 与 xtls-rprx-vision）、Trojan、Hysteria2（可选 salamander 混淆）、TUIC、SOCKS5、HTTP。传输层支持 TCP、WebSocket、gRPC、HTTP、HTTPUpgrade。",
+        "files": [
+          "lib/core/models/proxy_node.dart",
+          "lib/core/engine/config_builder.dart",
+          "lib/core/engine/node_validator.dart"
+        ]
+      },
+      {
+        "title": "多种导入方式",
+        "text": "粘贴分享链接（ss / vmess / vless / trojan / hysteria2 / hy2 / tuic / socks）、Base64 或逐行订阅内容、sing-box JSON；添加 http(s) 订阅地址；用相机扫描二维码，或从相册图片识别二维码。导入时会校验并去重。",
+        "files": [
+          "lib/core/networking/share_link_parser.dart",
+          "lib/features/profiles/qr_import.dart",
+          "lib/app/state.dart"
+        ]
+      },
+      {
+        "title": "导出与分享",
+        "text": "把节点复制为分享链接或 Base64 订阅、通过系统分享发送，或显示为二维码。导出前会提示内容包含凭据。HTTP 代理没有通用分享链接格式，因此不能导出。",
+        "files": [
+          "lib/core/networking/share_link_serializer.dart",
+          "lib/features/profiles/profiles_page.dart"
+        ]
+      },
+      {
+        "title": "三种路由模式",
+        "text": "自动分流：局域网与私有地址直连，按你设置的直连域名、代理域名后缀匹配，其余走代理；全局代理；直连模式（VPN 接管但全部直连，用于排查）。应用不内置 GeoIP / GeoSite 数据库。",
+        "files": [
+          "lib/core/engine/config_builder.dart",
+          "lib/core/models/models.dart"
+        ]
+      },
+      {
+        "title": "分层延迟检测与分组",
+        "text": "VPN 未开启时只测 TCP 端口或 TLS 握手，开启后经 sing-box 用该节点发起真实请求，结果会注明属于哪一层。可按来源、协议或自定义分组查看，按分组检测，并可一键删除最近检测失败的节点（删除前确认）。",
+        "files": [
+          "lib/core/engine/latency_tester.dart",
+          "lib/features/profiles/node_grouping.dart",
+          "lib/features/profiles/node_tools.dart"
+        ]
+      },
+      {
+        "title": "风险节点标记",
+        "text": "跳过 TLS 证书校验的节点标为「高风险」，默认不写入运行配置，连接前需要逐个确认；明文或不加密的节点标为「风险」，连接前同样提示。设置中可以选择允许所有风险节点直接连接（默认关闭）。",
+        "files": [
+          "lib/core/engine/node_risk.dart",
+          "lib/features/profiles/node_tools.dart"
+        ]
+      },
+      {
+        "title": "检测中心",
+        "text": "对 Cloudflare 目标、Claude API 目标或自定义 URL 逐步检测 DNS、TCP、TLS、HTTP，并保存检测历史（默认保留 30 天）。Claude 检测只验证网络可达，不携带任何凭据，也不检测账户可用性。",
+        "files": [
+          "lib/features/diagnostics/diagnostics_page.dart",
+          "lib/core/networking/probes.dart"
+        ]
+      },
+      {
+        "title": "出口 IP 与 IP 信誉",
+        "text": "查询当前出口 IP（api.ip.sb，失败时改用 ipinfo.io），并可通过 AbuseIPDB 查看该 IP 的滥用评分、举报数、ISP 等信息。1.3.0 安装包内置了一个默认 Key，你也可以填写自己的 Key，填写后优先使用。",
+        "files": [
+          "lib/core/reputation/ip_reputation.dart",
+          "lib/features/diagnostics/reputation_panel.dart"
+        ]
+      },
+      {
+        "title": "测速",
+        "text": "使用 M-Lab ndt7 或 Cloudflare 测速端点，测量延迟、抖动、下载与上传速率，可手动选择服务器。无法可靠测得的项目（如丢包率）不会显示估算值。",
+        "files": [
+          "lib/core/networking/speedtest/speedtest_engine.dart",
+          "lib/features/speedtest/speedtest_page.dart"
+        ]
+      },
+      {
+        "title": "实时流量曲线",
+        "text": "首页曲线使用 sing-box 内核的真实流量计数（约每 500 毫秒一个采样），只在已测得的点之间插值，不外推、不伪造数据；开启系统「减少动态效果」时不播放滚动动画。",
+        "files": [
+          "lib/features/dashboard/live_speed_chart.dart",
+          "lib/core/engine/traffic_meter.dart"
+        ]
+      }
+    ],
+    "screensTitle": "应用截图",
+    "screensLead": "目前还没有经过确认、可公开使用的应用截图。以下是占位框，待维护者提供真实截图后替换。",
+    "screenPlaceholder": "截图待补充",
+    "screenNames": [
+      "首页 / 连接",
+      "节点列表",
+      "检测中心"
+    ],
+    "compatTitle": "兼容性",
+    "compat": [
+      [
+        "系统",
+        "Android 7.0 及以上（minSdk 24，targetSdk 36，取自 1.3.0 构建的合并清单）；尚未在 Android 7–16 各版本上逐一测试"
+      ],
+      [
+        "CPU 架构",
+        "仅 arm64-v8a（libbox 内核目前只编译了这一种架构）"
+      ],
+      [
+        "签名",
+        "Android debug 签名，不是正式发布签名"
+      ],
+      [
+        "界面语言",
+        "仅简体中文（应用固定使用 zh-CN 区域设置）"
+      ],
+      [
+        "iOS / Windows / macOS / Linux",
+        "暂不提供"
+      ]
+    ],
+    "limitsTitle": "已知限制",
+    "limits": [
+      "**debug 签名**：安装包使用 Android debug 证书签名，不是正式发布签名。",
+      "**仅支持 arm64-v8a**：32 位 ARM 与 x86 设备无法安装。",
+      "**尚未形成真机测试记录**：VPN 连接、各协议实际互通、切换网络、后台回收、扫码与系统分享等行为 ==待验证==。",
+      "**签名证书变过两次**：1.0.0、1.1.0 与 1.1.1 及以后的版本分别使用不同的 debug 证书。从 1.0.0 或 1.1.0 升级到当前版本必须先卸载旧版（卸载会清除应用内的节点和设置）。",
+      "**内置 AbuseIPDB Key**：1.3.0 安装包内置了一个默认 AbuseIPDB API Key（构建时注入，不在源码中）。该 Key 随 APK 分发，任何人都可能提取；建议在设置中填写你自己的 Key。",
+      "**包含 Google ML Kit**：扫码功能内置 Google ML Kit 条码识别（专有组件），它与 GPL 的兼容性尚未解决，详见 [开源许可](/licenses)。",
+      "**仅 Android**：没有 iOS、Windows、macOS 或 Linux 版本。"
+    ],
+    "openTitle": "开源与透明",
+    "openText": "应用源代码、许可证和第三方组件声明都在 GitHub 上公开。隐私政策基于源码审计编写，列出了应用会访问的每一个第三方服务。",
+    "openPrivacy": "阅读隐私政策",
+    "openLicenses": "查看许可证与源码对应关系"
+  },
+  "download": {
+    "title": "下载中心",
+    "lead": "所有安装包都托管在 GitHub Releases，本站只提供链接和校验信息。下载后请先核对 SHA-256，再安装。",
+    "snapshot": "版本数据来自 GitHub Releases API 的构建时快照（{date}）。若与 GitHub 页面不一致，以 GitHub Release 页面为准。",
+    "latest": "最新版本",
+    "older": "历史版本",
+    "prerelease": "预发布版本",
+    "prereleaseNote": "预发布版本未经充分测试，仅供尝鲜。",
+    "noAsset": "该版本没有可验证的 APK 附件，请前往发布页查看。",
+    "fields": {
+      "version": "版本",
+      "date": "发布日期",
+      "file": "文件名",
+      "size": "文件大小",
+      "arch": "架构",
+      "signing": "签名类型",
+      "cert": "签名证书 SHA-256",
+      "sha": "APK SHA-256",
+      "source": "对应源码"
+    },
+    "signingDebug": "debug（非正式发布签名）",
+    "btnDownload": "下载 APK（GitHub）",
+    "btnRelease": "发布页（备用）",
+    "verifyTitle": "如何校验下载的文件",
+    "verifyLead": "把计算得到的 SHA-256 与上面显示的值逐位比较，完全一致才说明文件未被篡改或损坏。",
+    "verifyLinux": "Linux / macOS：",
+    "verifyWin": "Windows（命令提示符或 PowerShell）：",
+    "verifyAndroid": "Android 手机上：可以使用能计算文件哈希的文件管理器或校验工具，选择 SHA-256 算法后比对。请从可信渠道获取此类工具。",
+    "verifyCert": "如需核对签名证书，可在电脑上用 Android SDK 自带的 apksigner 查看：",
+    "certTitle": "签名证书指纹",
+    "certLead": "同一个应用只有签名证书相同才能覆盖安装。三个阶段使用的 debug 证书如下（用 apksigner 对与 Release 摘要一致的 APK 实测）：",
+    "certRows": [
+      [
+        "1.1.1 – 1.3.0",
+        "81081482aa537a23c6f8e1e6fa048b011f35388cd10d411b64c9b86906c15cc6"
+      ],
+      [
+        "1.1.0",
+        "43000125101c01aa325eaee94c381fe34181dbd971231b8d39806bc39a4e0597"
+      ],
+      [
+        "1.0.0",
+        "2805576cf662b984739c5e4dc73426cc018022543a970e4de5db35a3e614b6ef"
+      ]
+    ],
+    "certNote": "注意：1.1.0 的发布说明写着「与 1.0.0 使用同一 debug 签名，可直接覆盖安装」，但实测两者证书不同，从 1.0.0 升级到 1.1.0 同样需要先卸载。",
+    "issuesTitle": "已知问题",
+    "issues": [
+      "使用 debug 签名，不是正式发布签名；部分系统或安全软件可能给出额外警告。",
+      "仅提供 arm64-v8a 安装包。",
+      "从 1.0.0 或 1.1.0 升级到 1.3.0 必须先卸载旧版。卸载会删除应用内所有节点、订阅和设置（应用关闭了系统备份），请先保存好原始分享链接或订阅地址。",
+      "VPN 连接等核心功能尚未形成真机测试记录，==待验证==。",
+      "1.3.0 内置的默认 AbuseIPDB Key 会随 APK 公开，可能被他人提取使用或耗尽配额；建议填写自己的 Key。",
+      "Cloudflare 测速端点在连续测试时可能返回 HTTP 429（限流）。"
+    ],
+    "otherPlatforms": "其他平台",
+    "otherPlatformsText": "iOS、Windows、macOS、Linux：暂不提供。"
+  },
+  "changelog": {
+    "title": "版本历史与更新日志",
+    "lead": "正式发布的版本来自 GitHub Releases，更新说明按发布页原文展示（构建时安全转换，不执行任何内嵌 HTML）。",
+    "released": "正式发布",
+    "prerelease": "预发布",
+    "noNotes": "暂无发布说明。",
+    "origLabel": "发布说明（原文）",
+    "summaryLabel": "中文摘要",
+    "releasePage": "GitHub 发布页",
+    "commit": "源码提交",
+    "unreleasedTitle": "未单独发布的开发版本",
+    "unreleasedLead": "1.1.1、1.2.0、1.2.1 是开发过程中的构建，没有对应的 GitHub Release 或 tag，其改动已汇总进 1.3.0。下面的说明依据 Git 提交记录和仓库内的报告文档整理。",
+    "unreleasedBadge": "未单独发布",
+    "docLink": "仓库内报告",
+    "knownIssuesTitle": "跨版本已知问题",
+    "knownIssues": [
+      "1.0.0、1.1.0、1.1.1+ 三个阶段使用了不同的 debug 签名证书；跨阶段升级需要先卸载。",
+      "所有版本均为 debug 签名、仅 arm64-v8a。",
+      "发布说明中的测试数字（如「flutter test 通过」）是维护者在开发机上的记录，不是本站验证的结果；真机 VPN 连接 ==待验证==。"
+    ]
+  },
+  "docs": {
+    "title": "安装教程与帮助中心",
+    "lead": "这里只描述源码中已经实现的流程。还没有真机测试记录的环节标注为 ==待验证==，如果你的实际体验不同，欢迎在 GitHub Issues 反馈。"
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "lead": "本政策适用于 Android 应用 WQ's Proxy VPN（包名 dev.proxypilot.proxypilot_mobile），基于对 {ref} 源码的审计编写。它不适用于本网站以外的其他网站或服务。"
+  },
+  "licenses": {
+    "title": "开源许可证与第三方声明",
+    "lead": "WQ's Proxy VPN 以 GPL-3.0-or-later 发布。本页列出许可证文件、内置的第三方组件、每个发布版本对应的源码，以及目前仍未解决的许可证缺口。",
+    "depsTitle": "Flutter / Dart 依赖（来自 pubspec.lock）",
+    "depsLead": "下表由 pubspec.lock（提交 {commit}）生成，许可证类型取自本地 pub 缓存中各包 LICENSE 文件的文本匹配。标注为「仅开发」的包不会进入 APK；lock 文件中的 iOS、macOS、Windows、Linux、Web 平台实现包不会编译进 Android APK。",
+    "depsCols": [
+      "包名",
+      "版本",
+      "类型",
+      "许可证"
+    ],
+    "scope": {
+      "direct": "直接依赖",
+      "transitive": "间接依赖",
+      "dev": "仅开发"
+    },
+    "sourceTitle": "各版本对应源码",
+    "sourceLead": "每个 APK 对应的应用源码提交如下。sing-box 内核源码与构建脚本见下文。",
+    "sourceCols": [
+      "版本",
+      "tag",
+      "提交",
+      "说明"
+    ],
+    "sourceReleased": "GitHub Release",
+    "sourceUnreleased": "开发构建，未发布、无 tag"
+  },
+  "notFound": {
+    "code": "404",
+    "title": "页面不存在",
+    "text": "你访问的地址不存在，可能已被移动或输入有误。",
+    "home": "返回首页"
+  }
+}

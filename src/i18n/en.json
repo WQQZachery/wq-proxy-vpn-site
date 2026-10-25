@@ -1,0 +1,344 @@
+{
+  "htmlLang": "en",
+  "ogLocale": "en_US",
+  "prefix": "/en",
+  "siteName": "WQ's Proxy VPN",
+  "skip": "Skip to main content",
+  "nav": {
+    "label": "Main navigation",
+    "home": "Home",
+    "download": "Download",
+    "changelog": "Changelog",
+    "docs": "Docs",
+    "privacy": "Privacy",
+    "licenses": "Licenses",
+    "menu": "Menu",
+    "source": "Source"
+  },
+  "langSwitch": {
+    "text": "中文",
+    "aria": "切换到中文版本 (Switch to Chinese)",
+    "hreflang": "zh-CN"
+  },
+  "footer": {
+    "tagline": "An open-source Android proxy / VPN client built on Flutter and sing-box.",
+    "license": "The app is released under GPL-3.0-or-later. This site does not host any APK; every download points to GitHub Releases.",
+    "issues": "Report an issue (GitHub Issues)",
+    "repo": "GitHub repository",
+    "disclaimer": "Content on this site was checked against the app source ({ref}, commit {commit}). Items marked “Unverified” have no on-device test record yet."
+  },
+  "common": {
+    "pending": "Unverified",
+    "audit": "Pending audit",
+    "evidence": "Source",
+    "external": "(opens in a new window)",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyFail": "Copy failed — please select it manually",
+    "notProvided": "Not available",
+    "bytes": "bytes",
+    "toc": "On this page",
+    "updated": "Last updated",
+    "backTop": "Back to top"
+  },
+  "meta": {
+    "home": {
+      "title": "WQ's Proxy VPN — Android proxy client built on Flutter + sing-box",
+      "description": "WQ's Proxy VPN is an open-source (GPL-3.0-or-later) Android proxy / VPN client with a Flutter UI and the sing-box 1.14.3 core. Eight protocols, subscription and QR import, rule-based routing and built-in diagnostics."
+    },
+    "download": {
+      "title": "Download — WQ's Proxy VPN",
+      "description": "Download the WQ's Proxy VPN Android APK (arm64-v8a, debug-signed). Each release lists file size, SHA-256 checksum and signing certificate fingerprint; downloads link straight to GitHub Releases."
+    },
+    "changelog": {
+      "title": "Release history & changelog — WQ's Proxy VPN",
+      "description": "Release dates, release notes, known issues and source commits for every version of WQ's Proxy VPN, taken from GitHub Releases."
+    },
+    "docs": {
+      "title": "Installation guide & help — WQ's Proxy VPN",
+      "description": "How to install the WQ's Proxy VPN APK, grant VPN and notification permission, import nodes and subscriptions, pick a routing mode, use diagnostics and the speed test, and fix common problems."
+    },
+    "privacy": {
+      "title": "Privacy policy — WQ's Proxy VPN",
+      "description": "Privacy policy for the WQ's Proxy VPN Android app, based on a source code audit: what is stored on the device, which third-party services are contacted and when, what is sent, and the bundled Google ML Kit component."
+    },
+    "licenses": {
+      "title": "Open-source licenses & third-party notices — WQ's Proxy VPN",
+      "description": "GPL-3.0-or-later terms of WQ's Proxy VPN, the matching sing-box 1.14.3 source and build script, the Flutter/Dart dependency license list, and the license gaps that are still open."
+    },
+    "notFound": {
+      "title": "Page not found — WQ's Proxy VPN",
+      "description": "The page you are looking for does not exist."
+    }
+  },
+  "home": {
+    "eyebrow": "Android proxy / VPN client · Open source",
+    "title": "WQ's Proxy VPN",
+    "tagline": "An Android proxy / VPN client built on Flutter and sing-box.",
+    "lead": "Bring your own nodes or subscriptions and let the sing-box {singbox} core run the VPN tunnel on your phone. The app does not sell or provide servers, needs no account, and its source code is public under GPL-3.0-or-later.",
+    "ctaDownload": "Download v{version}",
+    "ctaSource": "View source code",
+    "ctaDocs": "Installation guide",
+    "chips": {
+      "version": "Current version v{version}",
+      "abi": "arm64-v8a only",
+      "android": "Android 7.0+ (minSdk 24)",
+      "signing": "Debug-signed",
+      "license": "GPL-3.0-or-later"
+    },
+    "statusTitle": "Test status",
+    "statusText": "The app passes its unit tests and sing-box config checks on the development machine, but real VPN connections, protocol interoperability, QR scanning and similar features **have no on-device test record yet** and are marked “Unverified”. The APK is signed with a debug certificate, not a production release key.",
+    "featuresTitle": "Features confirmed in the source code",
+    "featuresLead": "Every item below maps to an implementation in the {ref} source; follow “Source” to open the file. This shows the feature exists in code — it does not mean each one has been verified on a real device.",
+    "features": [
+      {
+        "title": "Eight proxy protocols",
+        "text": "Shadowsocks (including the 2022-blake3 ciphers), VMess, VLESS (with REALITY and xtls-rprx-vision), Trojan, Hysteria2 (optional salamander obfuscation), TUIC, SOCKS5 and HTTP. Transports: TCP, WebSocket, gRPC, HTTP and HTTPUpgrade.",
+        "files": [
+          "lib/core/models/proxy_node.dart",
+          "lib/core/engine/config_builder.dart",
+          "lib/core/engine/node_validator.dart"
+        ]
+      },
+      {
+        "title": "Flexible import",
+        "text": "Paste share links (ss / vmess / vless / trojan / hysteria2 / hy2 / tuic / socks), Base64 or line-by-line subscription content, or sing-box JSON; add an http(s) subscription URL; scan a QR code with the camera or read one from a gallery image. Imports are validated and de-duplicated.",
+        "files": [
+          "lib/core/networking/share_link_parser.dart",
+          "lib/features/profiles/qr_import.dart",
+          "lib/app/state.dart"
+        ]
+      },
+      {
+        "title": "Export and share",
+        "text": "Copy nodes as share links or a Base64 subscription, send them through the Android share sheet, or show them as a QR code. You are warned first that the export contains credentials. HTTP proxies have no common share-link format and cannot be exported.",
+        "files": [
+          "lib/core/networking/share_link_serializer.dart",
+          "lib/features/profiles/profiles_page.dart"
+        ]
+      },
+      {
+        "title": "Three routing modes",
+        "text": "Rule mode: LAN and private addresses go direct, then your own direct-domain and proxy-domain suffix lists apply, and everything else is proxied. Global mode. Direct mode (the VPN captures traffic but sends all of it direct, for troubleshooting). No GeoIP / GeoSite database is bundled.",
+        "files": [
+          "lib/core/engine/config_builder.dart",
+          "lib/core/models/models.dart"
+        ]
+      },
+      {
+        "title": "Layered latency tests and groups",
+        "text": "With the VPN off the app can only test the TCP port or the TLS handshake; with the VPN on it sends a real request through each node via sing-box. Every result says which layer it measured. View nodes by source, protocol or custom group, test one group at a time, and remove nodes that failed their last test (with confirmation).",
+        "files": [
+          "lib/core/engine/latency_tester.dart",
+          "lib/features/profiles/node_grouping.dart",
+          "lib/features/profiles/node_tools.dart"
+        ]
+      },
+      {
+        "title": "Risky-node labels",
+        "text": "Nodes that skip TLS certificate verification are marked “high risk”, are left out of the running config by default and need per-node confirmation before you connect. Plain-text or unencrypted nodes are marked “risk” and also prompt before connecting. A setting can allow all risky nodes (off by default).",
+        "files": [
+          "lib/core/engine/node_risk.dart",
+          "lib/features/profiles/node_tools.dart"
+        ]
+      },
+      {
+        "title": "Diagnostics center",
+        "text": "Step-by-step DNS, TCP, TLS and HTTP checks against a Cloudflare target, a Claude API target or any URL you enter, with a local history (kept 30 days by default). The Claude check only tests reachability: it sends no credentials and does not test any account.",
+        "files": [
+          "lib/features/diagnostics/diagnostics_page.dart",
+          "lib/core/networking/probes.dart"
+        ]
+      },
+      {
+        "title": "Exit IP and IP reputation",
+        "text": "Look up your current exit IP (api.ip.sb, falling back to ipinfo.io) and, through AbuseIPDB, see that IP's abuse score, report count, ISP and more. The 1.3.0 APK ships with a default key; if you enter your own key it is used instead.",
+        "files": [
+          "lib/core/reputation/ip_reputation.dart",
+          "lib/features/diagnostics/reputation_panel.dart"
+        ]
+      },
+      {
+        "title": "Speed test",
+        "text": "Measures latency, jitter, download and upload using M-Lab ndt7 or Cloudflare's speed endpoints, with manual server choice. Values it cannot measure reliably (such as packet loss) are never estimated.",
+        "files": [
+          "lib/core/networking/speedtest/speedtest_engine.dart",
+          "lib/features/speedtest/speedtest_page.dart"
+        ]
+      },
+      {
+        "title": "Live traffic chart",
+        "text": "The home-screen chart uses real traffic counters from the sing-box core (about one sample every 500 ms). It only interpolates between measured points — no extrapolation, no invented data — and stops scrolling when the system “reduce motion” setting is on.",
+        "files": [
+          "lib/features/dashboard/live_speed_chart.dart",
+          "lib/core/engine/traffic_meter.dart"
+        ]
+      }
+    ],
+    "screensTitle": "Screenshots",
+    "screensLead": "There are no confirmed, publishable app screenshots yet. The boxes below are placeholders until the maintainer supplies real ones.",
+    "screenPlaceholder": "Screenshot coming soon",
+    "screenNames": [
+      "Home / connect",
+      "Node list",
+      "Diagnostics"
+    ],
+    "compatTitle": "Compatibility",
+    "compat": [
+      [
+        "OS",
+        "Android 7.0 or later (minSdk 24, targetSdk 36, from the merged manifest of the 1.3.0 build); not tested on each Android version"
+      ],
+      [
+        "CPU architecture",
+        "arm64-v8a only (the libbox core is currently built for this ABI only)"
+      ],
+      [
+        "Signing",
+        "Android debug certificate, not a production release key"
+      ],
+      [
+        "App language",
+        "Simplified Chinese only (the app's locale is fixed to zh-CN)"
+      ],
+      [
+        "iOS / Windows / macOS / Linux",
+        "Not available"
+      ]
+    ],
+    "limitsTitle": "Known limitations",
+    "limits": [
+      "**Debug-signed**: the APK is signed with an Android debug certificate, not a production release key.",
+      "**arm64-v8a only**: 32-bit ARM and x86 devices cannot install it.",
+      "**No on-device test record yet**: VPN connections, real protocol interoperability, network switching, background process kills, QR scanning and the share sheet are ==Unverified==.",
+      "**The signing certificate changed twice**: 1.0.0, 1.1.0 and 1.1.1+ each use a different debug certificate. Upgrading from 1.0.0 or 1.1.0 to the current version requires uninstalling first (which deletes the app's nodes and settings).",
+      "**Built-in AbuseIPDB key**: the 1.3.0 APK contains a default AbuseIPDB API key injected at build time (it is not in the source). Because it ships inside the APK anyone could extract it; entering your own key in Settings is recommended.",
+      "**Contains Google ML Kit**: QR scanning bundles Google ML Kit barcode scanning, a proprietary component whose compatibility with the GPL is unresolved — see [Licenses](/en/licenses).",
+      "**Android only**: there is no iOS, Windows, macOS or Linux version."
+    ],
+    "openTitle": "Open and transparent",
+    "openText": "The source code, license and third-party notices are public on GitHub. The privacy policy is written from a source audit and lists every third-party service the app contacts.",
+    "openPrivacy": "Read the privacy policy",
+    "openLicenses": "Licenses and source mapping"
+  },
+  "download": {
+    "title": "Download",
+    "lead": "Every APK is hosted on GitHub Releases; this site only links to it and shows how to verify it. Check the SHA-256 before installing.",
+    "snapshot": "Release data is a build-time snapshot of the GitHub Releases API ({date}). If it ever differs from GitHub, the GitHub release page is authoritative.",
+    "latest": "Latest release",
+    "older": "Older releases",
+    "prerelease": "Pre-releases",
+    "prereleaseNote": "Pre-releases have not been fully tested and are for early testing only.",
+    "noAsset": "This release has no verifiable APK attachment; please check the release page.",
+    "fields": {
+      "version": "Version",
+      "date": "Released",
+      "file": "File name",
+      "size": "File size",
+      "arch": "Architecture",
+      "signing": "Signing",
+      "cert": "Signing cert SHA-256",
+      "sha": "APK SHA-256",
+      "source": "Source"
+    },
+    "signingDebug": "Debug (not a production release key)",
+    "btnDownload": "Download APK (GitHub)",
+    "btnRelease": "Release page (fallback)",
+    "verifyTitle": "How to verify the download",
+    "verifyLead": "Compare the SHA-256 you compute with the value shown above, character by character. Only an exact match means the file is intact and unmodified.",
+    "verifyLinux": "Linux / macOS:",
+    "verifyWin": "Windows (Command Prompt or PowerShell):",
+    "verifyAndroid": "On an Android phone: use a file manager or checksum tool that can compute file hashes, choose SHA-256 and compare. Get such tools from a source you trust.",
+    "verifyCert": "To check the signing certificate on a computer, use apksigner from the Android SDK:",
+    "certTitle": "Signing certificate fingerprints",
+    "certLead": "Android only lets you update an app in place when the signing certificate matches. These are the debug certificates used so far (measured with apksigner on APKs whose hash matches the release digest):",
+    "certRows": [
+      [
+        "1.1.1 – 1.3.0",
+        "81081482aa537a23c6f8e1e6fa048b011f35388cd10d411b64c9b86906c15cc6"
+      ],
+      [
+        "1.1.0",
+        "43000125101c01aa325eaee94c381fe34181dbd971231b8d39806bc39a4e0597"
+      ],
+      [
+        "1.0.0",
+        "2805576cf662b984739c5e4dc73426cc018022543a970e4de5db35a3e614b6ef"
+      ]
+    ],
+    "certNote": "Note: the 1.1.0 release notes say it uses the same debug signature as 1.0.0 and can be installed over it, but the certificates actually differ, so upgrading from 1.0.0 to 1.1.0 also requires uninstalling first.",
+    "issuesTitle": "Known issues",
+    "issues": [
+      "Debug-signed, not production-signed; some systems or security apps may show extra warnings.",
+      "Only an arm64-v8a APK is provided.",
+      "Upgrading from 1.0.0 or 1.1.0 to 1.3.0 requires uninstalling the old version first. Uninstalling deletes all nodes, subscriptions and settings in the app (system backup is disabled), so keep your original share links or subscription URLs.",
+      "Core features such as the VPN connection have no on-device test record yet — ==Unverified==.",
+      "The default AbuseIPDB key built into 1.3.0 is exposed with the APK and could be extracted or exhausted by others; entering your own key is recommended.",
+      "Cloudflare's speed endpoints may return HTTP 429 (rate limited) after repeated tests."
+    ],
+    "otherPlatforms": "Other platforms",
+    "otherPlatformsText": "iOS, Windows, macOS, Linux: not available."
+  },
+  "changelog": {
+    "title": "Release history & changelog",
+    "lead": "Published versions come from GitHub Releases. The original notes (written in Chinese) are shown as published, converted safely at build time with no embedded HTML executed, followed by an English summary.",
+    "released": "Release",
+    "prerelease": "Pre-release",
+    "noNotes": "No release notes.",
+    "origLabel": "Original release notes (Chinese)",
+    "summaryLabel": "English summary (written for this site, faithful to the original)",
+    "releasePage": "GitHub release page",
+    "commit": "Source commit",
+    "unreleasedTitle": "Development builds not released separately",
+    "unreleasedLead": "1.1.1, 1.2.0 and 1.2.1 were development builds with no GitHub Release or tag; their changes are rolled into 1.3.0. The notes below are based on the Git history and the reports in the repository.",
+    "unreleasedBadge": "Not released separately",
+    "docLink": "Report in repository",
+    "knownIssuesTitle": "Known issues across versions",
+    "knownIssues": [
+      "1.0.0, 1.1.0 and 1.1.1+ use three different debug signing certificates; upgrading across them requires uninstalling first.",
+      "Every version is debug-signed and arm64-v8a only.",
+      "Test numbers in the release notes (such as “flutter test passed”) are the maintainer's records from the development machine, not results verified by this site; on-device VPN connections are ==Unverified==."
+    ]
+  },
+  "docs": {
+    "title": "Installation guide & help",
+    "lead": "This guide only describes flows that exist in the source code. Steps without an on-device test record are marked ==Unverified==; if your experience differs, please report it on GitHub Issues."
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "lead": "This policy covers the Android app WQ's Proxy VPN (package dev.proxypilot.proxypilot_mobile) and is based on an audit of the {ref} source code. It does not cover other websites or services."
+  },
+  "licenses": {
+    "title": "Open-source licenses & third-party notices",
+    "lead": "WQ's Proxy VPN is released under GPL-3.0-or-later. This page lists the license files, bundled third-party components, the source matching each release, and the license gaps that remain open.",
+    "depsTitle": "Flutter / Dart dependencies (from pubspec.lock)",
+    "depsLead": "Generated from pubspec.lock (commit {commit}); license types come from a text match on each package's LICENSE file in a local pub cache. Packages marked “dev only” are not shipped in the APK, and the iOS, macOS, Windows, Linux and web implementation packages in the lock file are not compiled into the Android APK.",
+    "depsCols": [
+      "Package",
+      "Version",
+      "Type",
+      "License"
+    ],
+    "scope": {
+      "direct": "Direct",
+      "transitive": "Transitive",
+      "dev": "Dev only"
+    },
+    "sourceTitle": "Source for each version",
+    "sourceLead": "The app source commit for each APK is listed below. The sing-box core source and build script are covered further down.",
+    "sourceCols": [
+      "Version",
+      "Tag",
+      "Commit",
+      "Notes"
+    ],
+    "sourceReleased": "GitHub Release",
+    "sourceUnreleased": "Development build, not released, no tag"
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Page not found",
+    "text": "The address you visited does not exist. It may have moved or been mistyped.",
+    "home": "Back to home"
+  }
+}

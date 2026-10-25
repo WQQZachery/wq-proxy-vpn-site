@@ -1,0 +1,17 @@
+{
+  // Independent Worker for the WQ's Proxy VPN product site.
+  // Static assets only: no Worker script, no bindings, no Durable Objects, no secrets.
+  // It must never be deployed under the personal-site Worker name ("wqzachery").
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "wq-proxy-vpn-site",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "preview_urls": true,
+  "send_metrics": false,
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+  // No "routes" / "custom_domains" yet: vpn.wqzachery.dpdns.org has not been approved or created.
+}

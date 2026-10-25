@@ -1,0 +1,961 @@
+{
+  "generated_from": "pubspec.lock",
+  "app_commit": "d6ed8a52d157c576cfdb537904929de3b6ca9290",
+  "note": "License detected from each package LICENSE file in the local pub cache (text pattern match); dev/test-only packages are marked and are not shipped in the APK. Platform packages for iOS/macOS/Windows/Linux/web appear in the lock file but are not compiled into the Android APK.",
+  "packages": [
+    {
+      "name": "args",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.7.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/args/versions/2.7.0"
+    },
+    {
+      "name": "async",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.13.1",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/async/versions/2.13.1"
+    },
+    {
+      "name": "boolean_selector",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.1.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/boolean_selector/versions/2.1.2"
+    },
+    {
+      "name": "characters",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.4.1",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/characters/versions/1.4.1"
+    },
+    {
+      "name": "clock",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.1.3",
+      "scope": "transitive",
+      "license": "Apache-2.0",
+      "url": "https://pub.dev/packages/clock/versions/1.1.3"
+    },
+    {
+      "name": "code_assets",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.2.1",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/code_assets/versions/1.2.1"
+    },
+    {
+      "name": "collection",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.19.1",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/collection/versions/1.19.1"
+    },
+    {
+      "name": "cross_file",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "0.3.5+5",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/cross_file/versions/0.3.5+5"
+    },
+    {
+      "name": "crypto",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "3.0.7",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/crypto/versions/3.0.7"
+    },
+    {
+      "name": "cupertino_icons",
+      "dependency": "direct main",
+      "source": "hosted",
+      "version": "1.0.9",
+      "scope": "direct",
+      "license": "MIT",
+      "url": "https://pub.dev/packages/cupertino_icons/versions/1.0.9"
+    },
+    {
+      "name": "equatable",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "3.0.0",
+      "scope": "transitive",
+      "license": "MIT",
+      "url": "https://pub.dev/packages/equatable/versions/3.0.0"
+    },
+    {
+      "name": "fake_async",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.3.3",
+      "scope": "transitive",
+      "license": "Apache-2.0",
+      "url": "https://pub.dev/packages/fake_async/versions/1.3.3"
+    },
+    {
+      "name": "ffi",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.2.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/ffi/versions/2.2.0"
+    },
+    {
+      "name": "ffi_leak_tracker",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "0.1.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/ffi_leak_tracker/versions/0.1.2"
+    },
+    {
+      "name": "file",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "7.0.1",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/file/versions/7.0.1"
+    },
+    {
+      "name": "file_selector_linux",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "0.9.4+1",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/file_selector_linux/versions/0.9.4+1"
+    },
+    {
+      "name": "file_selector_macos",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "0.9.5+2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/file_selector_macos/versions/0.9.5+2"
+    },
+    {
+      "name": "file_selector_platform_interface",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.7.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/file_selector_platform_interface/versions/2.7.0"
+    },
+    {
+      "name": "file_selector_windows",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "0.9.3+6",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/file_selector_windows/versions/0.9.3+6"
+    },
+    {
+      "name": "fixnum",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.1.1",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/fixnum/versions/1.1.1"
+    },
+    {
+      "name": "fl_chart",
+      "dependency": "direct main",
+      "source": "hosted",
+      "version": "1.3.0",
+      "scope": "direct",
+      "license": "MIT",
+      "url": "https://pub.dev/packages/fl_chart/versions/1.3.0"
+    },
+    {
+      "name": "flutter",
+      "dependency": "direct main",
+      "source": "sdk",
+      "version": "0.0.0",
+      "scope": "direct",
+      "license": "Flutter SDK (BSD-3-Clause)",
+      "url": null
+    },
+    {
+      "name": "flutter_lints",
+      "dependency": "direct dev",
+      "source": "hosted",
+      "version": "6.0.0",
+      "scope": "dev",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/flutter_lints/versions/6.0.0"
+    },
+    {
+      "name": "flutter_plugin_android_lifecycle",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.0.35",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/flutter_plugin_android_lifecycle/versions/2.0.35"
+    },
+    {
+      "name": "flutter_riverpod",
+      "dependency": "direct main",
+      "source": "hosted",
+      "version": "3.4.3",
+      "scope": "direct",
+      "license": "MIT",
+      "url": "https://pub.dev/packages/flutter_riverpod/versions/3.4.3"
+    },
+    {
+      "name": "flutter_secure_storage",
+      "dependency": "direct main",
+      "source": "hosted",
+      "version": "11.2.0",
+      "scope": "direct",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/flutter_secure_storage/versions/11.2.0"
+    },
+    {
+      "name": "flutter_secure_storage_darwin",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "0.4.3",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/flutter_secure_storage_darwin/versions/0.4.3"
+    },
+    {
+      "name": "flutter_secure_storage_linux",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "3.0.3",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/flutter_secure_storage_linux/versions/3.0.3"
+    },
+    {
+      "name": "flutter_secure_storage_platform_interface",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.1.1",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/flutter_secure_storage_platform_interface/versions/2.1.1"
+    },
+    {
+      "name": "flutter_secure_storage_web",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.1.1",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/flutter_secure_storage_web/versions/2.1.1"
+    },
+    {
+      "name": "flutter_secure_storage_windows",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "4.2.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/flutter_secure_storage_windows/versions/4.2.2"
+    },
+    {
+      "name": "flutter_test",
+      "dependency": "direct dev",
+      "source": "sdk",
+      "version": "0.0.0",
+      "scope": "dev",
+      "license": "Flutter SDK (BSD-3-Clause)",
+      "url": null
+    },
+    {
+      "name": "flutter_web_plugins",
+      "dependency": "transitive",
+      "source": "sdk",
+      "version": "0.0.0",
+      "scope": "transitive",
+      "license": "Flutter SDK (BSD-3-Clause)",
+      "url": null
+    },
+    {
+      "name": "glob",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.2.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/glob/versions/2.2.0"
+    },
+    {
+      "name": "hooks",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.0.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/hooks/versions/2.0.2"
+    },
+    {
+      "name": "http",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.6.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/http/versions/1.6.0"
+    },
+    {
+      "name": "http_parser",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "4.1.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/http_parser/versions/4.1.2"
+    },
+    {
+      "name": "image_picker",
+      "dependency": "direct main",
+      "source": "hosted",
+      "version": "1.2.4",
+      "scope": "direct",
+      "license": "BSD-3-Clause AND Apache-2.0",
+      "url": "https://pub.dev/packages/image_picker/versions/1.2.4"
+    },
+    {
+      "name": "image_picker_android",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "0.8.13+25",
+      "scope": "transitive",
+      "license": "BSD-3-Clause AND Apache-2.0",
+      "url": "https://pub.dev/packages/image_picker_android/versions/0.8.13+25"
+    },
+    {
+      "name": "image_picker_for_web",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "3.1.1",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/image_picker_for_web/versions/3.1.1"
+    },
+    {
+      "name": "image_picker_ios",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "0.8.13+13",
+      "scope": "transitive",
+      "license": "BSD-3-Clause AND Apache-2.0",
+      "url": "https://pub.dev/packages/image_picker_ios/versions/0.8.13+13"
+    },
+    {
+      "name": "image_picker_linux",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "0.2.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/image_picker_linux/versions/0.2.2"
+    },
+    {
+      "name": "image_picker_macos",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "0.2.2+1",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/image_picker_macos/versions/0.2.2+1"
+    },
+    {
+      "name": "image_picker_platform_interface",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.11.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/image_picker_platform_interface/versions/2.11.2"
+    },
+    {
+      "name": "image_picker_windows",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "0.2.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/image_picker_windows/versions/0.2.2"
+    },
+    {
+      "name": "jni",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.1.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/jni/versions/1.1.0"
+    },
+    {
+      "name": "jni_flutter",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.0.4+1",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/jni_flutter/versions/1.0.4+1"
+    },
+    {
+      "name": "jni_util",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.0.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/jni_util/versions/1.0.0"
+    },
+    {
+      "name": "leak_tracker",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "11.0.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/leak_tracker/versions/11.0.2"
+    },
+    {
+      "name": "leak_tracker_flutter_testing",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "3.0.10",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/leak_tracker_flutter_testing/versions/3.0.10"
+    },
+    {
+      "name": "leak_tracker_testing",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "3.0.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/leak_tracker_testing/versions/3.0.2"
+    },
+    {
+      "name": "lints",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "6.1.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/lints/versions/6.1.0"
+    },
+    {
+      "name": "listen",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.0.1",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/listen/versions/1.0.1"
+    },
+    {
+      "name": "logging",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.3.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/logging/versions/1.3.0"
+    },
+    {
+      "name": "matcher",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "0.12.20",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/matcher/versions/0.12.20"
+    },
+    {
+      "name": "material_color_utilities",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "0.13.0",
+      "scope": "transitive",
+      "license": "Apache-2.0",
+      "url": "https://pub.dev/packages/material_color_utilities/versions/0.13.0"
+    },
+    {
+      "name": "meta",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.18.3",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/meta/versions/1.18.3"
+    },
+    {
+      "name": "mime",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.1.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/mime/versions/2.1.0"
+    },
+    {
+      "name": "mobile_scanner",
+      "dependency": "direct main",
+      "source": "hosted",
+      "version": "7.4.2",
+      "scope": "direct",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/mobile_scanner/versions/7.4.2"
+    },
+    {
+      "name": "native_toolchain_c",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "0.19.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/native_toolchain_c/versions/0.19.2"
+    },
+    {
+      "name": "objective_c",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "9.5.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/objective_c/versions/9.5.0"
+    },
+    {
+      "name": "package_config",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "3.0.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/package_config/versions/3.0.0"
+    },
+    {
+      "name": "path",
+      "dependency": "direct main",
+      "source": "hosted",
+      "version": "1.9.1",
+      "scope": "direct",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/path/versions/1.9.1"
+    },
+    {
+      "name": "path_provider",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.1.6",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/path_provider/versions/2.1.6"
+    },
+    {
+      "name": "path_provider_android",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.3.1",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/path_provider_android/versions/2.3.1"
+    },
+    {
+      "name": "path_provider_foundation",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.6.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/path_provider_foundation/versions/2.6.0"
+    },
+    {
+      "name": "path_provider_linux",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.2.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/path_provider_linux/versions/2.2.2"
+    },
+    {
+      "name": "path_provider_platform_interface",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.1.3",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/path_provider_platform_interface/versions/2.1.3"
+    },
+    {
+      "name": "path_provider_windows",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.3.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/path_provider_windows/versions/2.3.0"
+    },
+    {
+      "name": "platform",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "3.2.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/platform/versions/3.2.0"
+    },
+    {
+      "name": "plugin_platform_interface",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.1.8",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/plugin_platform_interface/versions/2.1.8"
+    },
+    {
+      "name": "pub_semver",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.2.1",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/pub_semver/versions/2.2.1"
+    },
+    {
+      "name": "qr",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "3.0.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/qr/versions/3.0.2"
+    },
+    {
+      "name": "qr_flutter",
+      "dependency": "direct main",
+      "source": "hosted",
+      "version": "4.1.0",
+      "scope": "direct",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/qr_flutter/versions/4.1.0"
+    },
+    {
+      "name": "record_use",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "0.6.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/record_use/versions/0.6.0"
+    },
+    {
+      "name": "riverpod",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "3.4.3",
+      "scope": "transitive",
+      "license": "MIT",
+      "url": "https://pub.dev/packages/riverpod/versions/3.4.3"
+    },
+    {
+      "name": "share_plus",
+      "dependency": "direct main",
+      "source": "hosted",
+      "version": "13.3.1",
+      "scope": "direct",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/share_plus/versions/13.3.1"
+    },
+    {
+      "name": "share_plus_platform_interface",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "7.2.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/share_plus_platform_interface/versions/7.2.0"
+    },
+    {
+      "name": "sky_engine",
+      "dependency": "transitive",
+      "source": "sdk",
+      "version": "0.0.0",
+      "scope": "transitive",
+      "license": "Flutter SDK (BSD-3-Clause)",
+      "url": null
+    },
+    {
+      "name": "source_span",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.10.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/source_span/versions/1.10.2"
+    },
+    {
+      "name": "sqflite",
+      "dependency": "direct main",
+      "source": "hosted",
+      "version": "2.4.5",
+      "scope": "direct",
+      "license": "BSD-2-Clause",
+      "url": "https://pub.dev/packages/sqflite/versions/2.4.5"
+    },
+    {
+      "name": "sqflite_android",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.4.5",
+      "scope": "transitive",
+      "license": "BSD-2-Clause",
+      "url": "https://pub.dev/packages/sqflite_android/versions/2.4.5"
+    },
+    {
+      "name": "sqflite_common",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.5.14",
+      "scope": "transitive",
+      "license": "BSD-2-Clause",
+      "url": "https://pub.dev/packages/sqflite_common/versions/2.5.14"
+    },
+    {
+      "name": "sqflite_common_ffi",
+      "dependency": "direct dev",
+      "source": "hosted",
+      "version": "2.4.5",
+      "scope": "dev",
+      "license": "BSD-2-Clause",
+      "url": "https://pub.dev/packages/sqflite_common_ffi/versions/2.4.5"
+    },
+    {
+      "name": "sqflite_darwin",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.4.4+1",
+      "scope": "transitive",
+      "license": "BSD-2-Clause",
+      "url": "https://pub.dev/packages/sqflite_darwin/versions/2.4.4+1"
+    },
+    {
+      "name": "sqflite_platform_interface",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.4.3",
+      "scope": "transitive",
+      "license": "BSD-2-Clause",
+      "url": "https://pub.dev/packages/sqflite_platform_interface/versions/2.4.3"
+    },
+    {
+      "name": "sqlite3",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "3.5.2",
+      "scope": "transitive",
+      "license": "MIT",
+      "url": "https://pub.dev/packages/sqlite3/versions/3.5.2"
+    },
+    {
+      "name": "stack_trace",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.12.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/stack_trace/versions/1.12.2"
+    },
+    {
+      "name": "state_notifier",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.0.0",
+      "scope": "transitive",
+      "license": "MIT",
+      "url": "https://pub.dev/packages/state_notifier/versions/1.0.0"
+    },
+    {
+      "name": "stream_channel",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.1.4",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/stream_channel/versions/2.1.4"
+    },
+    {
+      "name": "string_scanner",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.4.1",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/string_scanner/versions/1.4.1"
+    },
+    {
+      "name": "synchronized",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "3.5.0",
+      "scope": "transitive",
+      "license": "MIT",
+      "url": "https://pub.dev/packages/synchronized/versions/3.5.0"
+    },
+    {
+      "name": "term_glyph",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.2.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/term_glyph/versions/1.2.2"
+    },
+    {
+      "name": "test_api",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "0.7.12",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/test_api/versions/0.7.12"
+    },
+    {
+      "name": "typed_data",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.4.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/typed_data/versions/1.4.0"
+    },
+    {
+      "name": "url_launcher_linux",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "3.2.3",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/url_launcher_linux/versions/3.2.3"
+    },
+    {
+      "name": "url_launcher_platform_interface",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.3.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/url_launcher_platform_interface/versions/2.3.2"
+    },
+    {
+      "name": "url_launcher_web",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.4.3",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/url_launcher_web/versions/2.4.3"
+    },
+    {
+      "name": "url_launcher_windows",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "3.1.6",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/url_launcher_windows/versions/3.1.6"
+    },
+    {
+      "name": "uuid",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "4.6.0",
+      "scope": "transitive",
+      "license": "MIT",
+      "url": "https://pub.dev/packages/uuid/versions/4.6.0"
+    },
+    {
+      "name": "vector_math",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "2.4.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/vector_math/versions/2.4.0"
+    },
+    {
+      "name": "vm_service",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "15.4.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/vm_service/versions/15.4.0"
+    },
+    {
+      "name": "web",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.1.2",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/web/versions/1.1.2"
+    },
+    {
+      "name": "win32",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "6.4.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/win32/versions/6.4.0"
+    },
+    {
+      "name": "xdg_directories",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "1.1.0",
+      "scope": "transitive",
+      "license": "BSD-3-Clause",
+      "url": "https://pub.dev/packages/xdg_directories/versions/1.1.0"
+    },
+    {
+      "name": "yaml",
+      "dependency": "transitive",
+      "source": "hosted",
+      "version": "3.1.4",
+      "scope": "transitive",
+      "license": "MIT",
+      "url": "https://pub.dev/packages/yaml/versions/3.1.4"
+    }
+  ]
+}

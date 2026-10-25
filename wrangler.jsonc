@@ -12,6 +12,7 @@
     "directory": "./dist",
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash"
-  }
-  // No "routes" / "custom_domains" yet: vpn.wqzachery.dpdns.org has not been approved or created.
+  },
+  // Custom domain approved by the owner on 2026-10-25. Cloudflare creates the DNS record and certificate.
+  "routes": [{ "pattern": "vpn.wqzachery.dpdns.org", "custom_domain": true }]
 }

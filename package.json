@@ -12,6 +12,8 @@
     "fetch-releases": "node scripts/fetch-releases.mjs",
     "gen-deps": "node scripts/gen-deps.mjs",
     "build": "node scripts/build.mjs",
+    "build:prod": "SITE_URL=https://vpn.wqzachery.dpdns.org node scripts/build.mjs",
+    "deploy": "npm run build:prod && npm run check && wrangler deploy",
     "check": "node scripts/check.mjs",
     "dev": "npm run build && wrangler dev",
     "screenshots": "node scripts/screenshots.mjs"

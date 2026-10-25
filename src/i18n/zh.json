@@ -31,7 +31,8 @@
     "license": "应用以 GPL-3.0-or-later 发布。本站不托管安装包，所有下载均指向 GitHub Releases。",
     "issues": "问题反馈（GitHub Issues）",
     "repo": "GitHub 仓库",
-    "disclaimer": "本站内容依据应用源码（{ref}，提交 {commit}）核对；标注「待验证」的内容尚无真机测试记录。"
+    "disclaimer": "本站内容依据应用源码（{ref}，提交 {commit}）核对；标注「待验证」的内容尚无真机测试记录。",
+    "home": "WQZachery 主页"
   },
   "common": {
     "pending": "待验证",

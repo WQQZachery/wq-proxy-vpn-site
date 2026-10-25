@@ -434,6 +434,8 @@ function layout({ page, lang, title, description, body, assets }) {
     body,
     footerTagline: t.footer.tagline,
     footerLicense: t.footer.license,
+    footerHome: t.footer.home,
+    footerHomeExt: t.common.external,
     footerLinks,
     footerDisclaimer: disclaimer,
   });

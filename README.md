@@ -32,6 +32,7 @@ scripts/
   check.mjs            HTML/link/SEO/release-consistency/header/secret checks (--live compares with GitHub)
   test-routes.sh       wrangler dev + curl every route, redirects, 404s, headers
   screenshots.mjs      Chromium screenshots 360/768/1280, overflow, axe-core, interaction checks
+  style-checks.mjs     theme contrast table, no-backdrop-filter fallback, focus ring, reduced motion
   with-dev-server.sh   run a command while wrangler dev serves dist/
   gen-deps.mjs gen-og.mjs  maintainer tools (regenerate dependencies.json / og.png)
   lib/markdown.mjs     tiny escaping Markdown converter (no raw HTML passthrough)
@@ -62,8 +63,19 @@ Extra local tests:
 ```bash
 scripts/test-routes.sh                                   # routes, redirects, 404, headers
 CHROMIUM_PATH=/usr/bin/chromium scripts/with-dev-server.sh node scripts/screenshots.mjs
+CHROMIUM_PATH=/usr/bin/chromium scripts/with-dev-server.sh node scripts/style-checks.mjs
 # PHASES=shots|axe|interact and WIDTHS=360,768,1280 select subsets
 ```
+
+## Visual style
+
+The look follows the main site [wqzachery.dpdns.org](https://wqzachery.dpdns.org/): pure black
+background, iOS 26-style liquid-glass surfaces (white 3.5–6 % fill, `blur(7px) saturate(170%)
+brightness(1.06)`, inset highlights and a gradient rim), brand green `#76b900`, pill buttons, a floating
+glass nav pill with a green dot under the current page, Apple system font stack and a `#60a5fa` focus ring.
+It is re-implemented in `public/assets/css/site.css` (no assets, fonts or scripts are loaded from the main
+site). Without `backdrop-filter`, with `prefers-reduced-transparency` or `prefers-contrast: more`, surfaces
+fall back to opaque `#141418` / `#0b0b0d` panels. Tokens and contrast are checked by `scripts/style-checks.mjs`.
 
 ## Base URL / canonical
 

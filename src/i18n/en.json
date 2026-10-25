@@ -25,7 +25,8 @@
     "license": "The app is released under GPL-3.0-or-later. This site does not host any APK; every download points to GitHub Releases.",
     "issues": "Report an issue (GitHub Issues)",
     "repo": "GitHub repository",
-    "disclaimer": "Content on this site was checked against the app source ({ref}, commit {commit}). Items marked “Unverified” have no on-device test record yet."
+    "disclaimer": "Content on this site was checked against the app source ({ref}, commit {commit}). Items marked “Unverified” have no on-device test record yet.",
+    "home": "WQZachery Home"
   },
   "common": {
     "pending": "Unverified",

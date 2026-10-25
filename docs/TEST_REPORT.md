@@ -1,5 +1,72 @@
 # Test report — WQ's Proxy VPN website (local)
 
+Latest run: 2026-10-25 (Asia/Shanghai), after the **visual restyle to match wqzachery.dpdns.org**
+(pure black, liquid-glass surfaces, brand green `#76b900`). The sections from the first build are kept
+further below as history; every row in the first table was re-run on the restyled site.
+
+Environment: Debian 13 aarch64 sandbox, Node v22.23.3, wrangler 4.152.0 (local `wrangler dev`, no
+Cloudflare login), Chromium 156.0.8078.47 (Debian package, re-installed with apt for this run) driven by
+playwright 1.64.1 (library only), axe-core 4.14.0.
+
+Status legend: **已运行通过 / passed** · **未执行 / not run** · **无权限 / no access**.
+
+## Restyle run (2026-10-25)
+
+| Test | Status | Evidence |
+|---|---|---|
+| `npm run build` | 已运行通过 | `[build] 13 files → dist/ (SITE_URL=unset …; og.png=true)` |
+| `npm run check` | 已运行通过 | `[check] 13 HTML files, 716 links/resources (430 external), 3 release assets` → `OK — all checks passed` (13 more links than before = the new footer link to the main site on every page) |
+| `npm run check -- --live` | 已运行通过 | `live GitHub API comparison: 3 releases checked`, OK |
+| `SITE_URL=https://vpn.wqzachery.dpdns.org` build + check | 已运行通过 | 14 files incl. sitemap, `OK — all checks passed` (default build restored afterwards) |
+| `scripts/test-routes.sh` (wrangler dev) | 已运行通过 | 27 PASS lines, 0 FAIL, `ROUTES: ALL PASS`; CSP / nosniff / referrer / permissions / XFO / COOP headers unchanged; hashed CSS `immutable` |
+| Screenshots 360 / 768 / 1280, 12 pages + 404 | 已运行通过 | 39 PNGs in `screenshots/` (git-ignored) |
+| Horizontal overflow 320 / 360 / 768 / 1280 (incl. no-JS 360) | 已运行通过 | `horizontal overflow: none`; `320px: no horizontal overflow on any page` |
+| Console errors / CSP violations | 已运行通过 | `console errors/warnings: none` (no inline style/script was added) |
+| axe-core WCAG 2.0/2.1 A + AA, all 13 pages at 1280 and 360 | 已运行通过 | `axe WCAG 2 A/AA violations: none` |
+| Interaction checks (menu, Escape, language suggestion/preference/switch, history, copy SHA-256, skip link, no-JS) | 已运行通过 | 19/19 PASS |
+| **New** `scripts/style-checks.mjs` — token contrast table | 已运行通过 | 20/20 pairs pass (see below) |
+| **New** — fallback without `backdrop-filter` | 已运行通过 | stylesheet served with the 5 `@supports (backdrop-filter)` blocks cut out: cards / header / buttons are opaque `rgb(20, 20, 24)`, axe color-contrast 0 violations on `/`, `/download`, `/en/docs`; screenshot `screenshots/fallback-zh-download-1280.png` |
+| **New** — focus ring, nav indicator, reduced motion, open mobile menu | 已运行通过 | focus `solid 2px rgb(96, 165, 250)` (main site's ring colour); current-page green dot visible; `.btn` transition 0.01 ms under `prefers-reduced-motion`; `screenshots/menu-open-zh-360.png` |
+| Manual visual review | 已运行（抽查） | zh home 360 / 1280, zh download 1280, zh docs 1280, en download 360, zh 404 360, en changelog 768, open menu 360, fallback 1280, new `og.png` |
+| `wrangler deploy` / `--dry-run` | 未执行 | not needed for this change (`wrangler.jsonc` untouched) |
+| Cloudflare preview / custom domain | 未执行 / 无权限 | not part of the task |
+| Main-site repo `/tmp/siteaudit` untouched | 已运行通过 | clean, HEAD 2d4fb3d0670c3a7c722e2118e10d4fa9258ddcea (read only, used as style reference) |
+| App repo untouched | 已运行通过 | `proxypilot-mobile` clean, HEAD d6ed8a5 |
+
+### Contrast (computed by `scripts/style-checks.mjs` from the CSS tokens)
+
+"glass worst" = 4.5 % white glass over the brightest point of the ambient green glow
+(`#76b900` at 20 % on black), i.e. the lightest background any card text sits on.
+
+| Pair | on #000 | on glass worst | on fallback #141418 |
+|---|---|---|---|
+| body `#f5f5f7` | 19.29 | 13.04 | 16.87 |
+| muted `#a1a1a6` | 8.16 | 5.52 | 7.14 |
+| tertiary `#9a9aa0` (was `#8e8e93`: 4.35 on glass worst → raised) | 7.50 | 5.07 | 6.57 |
+| link / label green `#9ad13b` | 11.56 | 7.81 | 10.11 |
+| brand green `#76b900` (dots, 404 numeral, large text only) | 8.71 | 5.89 | – |
+| `#000` text on green button `#76b900` / hover `#8fd400` | 8.71 / 11.59 | – | – |
+| amber `#fbbf24` (warnings) | 12.58 | 7.31 (amber notice) | – |
+| focus ring `#60a5fa` (non-text, ≥ 3:1) | 8.26 | 5.58 | – |
+
+Note: axe-core reports contrast it cannot compute (text over `backdrop-filter` or gradients) as
+"incomplete", not as a violation, which is why the token table and the no-backdrop-filter run exist.
+
+### Issues found and fixed during the restyle run
+
+- Tertiary text `#8e8e93` (main-site value) measured 4.35:1 on the brightest glass → raised to `#9a9aa0`.
+- Test-harness flake, not a site bug: under `reducedMotion: 'reduce'` the global 0.01 ms transition is only
+  advanced when headless Chromium produces a frame, so computed styles read immediately after a change
+  showed the start value. The fallback test now serves a stripped stylesheet instead of editing CSSOM,
+  and the focus check waits two animation frames.
+- Full-page screenshots of short pages show black space below the footer; measured in the live page the
+  footer ends exactly at `scrollHeight` (artifact of full-page capture with the sticky header).
+
+---
+
+# First build (history)
+
+
 Date: 2026-10-25 (Asia/Shanghai). Environment: Debian 13 aarch64 sandbox, Node v22.23.3,
 wrangler 4.152.0 (local `wrangler dev`, no Cloudflare login), Chromium 156.0.8078.47 (Debian package)
 driven by playwright 1.64 (library only; Playwright's own browser download failed on linux-arm64),

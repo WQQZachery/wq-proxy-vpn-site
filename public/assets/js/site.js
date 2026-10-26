@@ -9,11 +9,18 @@
   var mobileMq = window.matchMedia('(max-width: 860px)');
 
   // Header: slightly shrinks once the page scrolls (main site .nav.solid).
+  // Perf: reads scrollY at most once per animation frame and only writes the class when the state flips,
+  // so a scroll gesture costs one cheap callback per frame and two class writes in total.
   var header = document.querySelector('.site-header');
   if (header) {
-    var onScroll = function () { header.classList.toggle('solid', window.scrollY > 8); };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    var solid = null, queued = false;
+    var update = function () {
+      queued = false;
+      var s = window.scrollY > 8;
+      if (s !== solid) { solid = s; header.classList.toggle('solid', s); }
+    };
+    window.addEventListener('scroll', function () { if (!queued) { queued = true; requestAnimationFrame(update); } }, { passive: true });
+    update();
   }
 
   // Mobile navigation: drop-down glass panel with the main site's dialog motion
@@ -118,12 +125,18 @@
   // Liquid glass lens — ported from the main site (wqzachery.dpdns.org index.html).
   // Chromium only (backdrop-filter: url() works there); Safari/Firefox keep the frosted .lg fallback.
   // A per-element SVG filter: canvas-rendered rounded-rect SDF displacement map (smoothstep bezel) fed to
-  // three feDisplacementMap passes for a slight chromatic split. Very large surfaces stay frosted.
+  // three feDisplacementMap passes for a slight chromatic split.
+  // Perf budget: the filter re-samples and displaces the backdrop on EVERY frame the element is on screen, so
+  // it is applied only to elements marked [data-lens] (the header pill), and not at all on touch-first or
+  // low-end devices (coarse pointer without hover, ≤4 CPU cores or ≤4 GB RAM), where the frosted .lg stays.
   (function () {
     var ua = navigator.userAgent;
     var chromium = /Chrome\/|Chromium\/|Edg\//.test(ua) && !/CriOS|EdgiOS|FxiOS/.test(ua) && !/Firefox\//.test(ua);
     if (!chromium || !window.CSS || !CSS.supports('backdrop-filter', 'url(#x)')) return;
     if (window.matchMedia('(prefers-reduced-transparency: reduce), (prefers-contrast: more)').matches) return;
+    var touchFirst = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    var lowEnd = (navigator.hardwareConcurrency || 8) <= 4 || (navigator.deviceMemory || 8) <= 4;
+    if ((touchFirst || lowEnd) && document.documentElement.getAttribute('data-lens') !== 'force') return;
     var NS = 'http://www.w3.org/2000/svg';
     var defs = document.querySelector('#lgdefs defs');
     if (!defs) return;
@@ -180,19 +193,25 @@
       el.style.setProperty('--lens', 'url(#' + id + ')');
       if (el.__vis !== false) el.classList.add('lens');
     }
-    var els = Array.prototype.slice.call(document.querySelectorAll('.lg'));
+    var els = Array.prototype.slice.call(document.querySelectorAll('.lg[data-lens]'));
+    if (!els.length) return;
     var run = function () { els.forEach(build); };
     // refraction only for glass that is on screen; off-screen surfaces drop the SVG filter
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (es) {
-        es.forEach(function (e) { var el = e.target; el.__vis = e.isIntersecting; if (el.dataset.lid) el.classList.toggle('lens', e.isIntersecting); });
-      }, { rootMargin: '120px' });
-      els.forEach(function (e) { io.observe(e); });
-    }
-    if ('ResizeObserver' in window) {
-      var ro = new ResizeObserver(function () { clearTimeout(run.t); run.t = setTimeout(run, 120); });
-      els.forEach(function (e) { ro.observe(e); });
-    }
+    var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+      es.forEach(function (e) { var el = e.target; el.__vis = e.isIntersecting; if (el.dataset.lid) el.classList.toggle('lens', e.isIntersecting); });
+    }, { rootMargin: '120px' }) : null;
+    var ro = 'ResizeObserver' in window ? new ResizeObserver(function () { clearTimeout(run.t); run.t = setTimeout(run, 120); }) : null;
+    var watch = function (on) {
+      els.forEach(function (e) {
+        if (io) { if (on) io.observe(e); else io.unobserve(e); }
+        if (ro) { if (on) ro.observe(e); else ro.unobserve(e); }
+      });
+    };
+    watch(true);
+    // background tab: stop observing (no layout/intersection work while hidden), resume when visible again
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) { clearTimeout(run.t); watch(false); } else { watch(true); }
+    });
     requestAnimationFrame(run);
   })();
 })();

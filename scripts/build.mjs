@@ -84,8 +84,10 @@ function evidenceLinks(files, t, lang) {
     files.map((f) => `<a href="${esc(repoBlob(f))}" ${EXT} title="${esc(f)}"><code>${esc(f.split('/').pop())}</code></a>`).join(' ') + '</p>';
 }
 
-function pageHeader(title, lead) {
-  return `<section class="page-hero"><div class="container"><h1>${esc(title)}</h1>${lead ? `<p class="lead">${inline(lead)}</p>` : ''}</div></section>`;
+// width: 'container' (default), 'reading' (long text pages) or 'doc' (aligned with the TOC + article grid)
+function pageHeader(title, lead, width = 'container') {
+  const cls = width === 'reading' ? 'reading-container' : width === 'doc' ? 'container doc-hero' : 'container';
+  return `<section class="page-hero"><div class="${cls}"><h1>${esc(title)}</h1>${lead ? `<p class="lead">${inline(lead)}</p>` : ''}</div></section>`;
 }
 
 function withToc(t, bodyHtml, toc, extraTop = '') {
@@ -114,7 +116,7 @@ function pageHome(lang) {
   const screens = h.screens.map((sc, i) => `
         <li class="screen">
           <figure>
-            <div class="phone lg lg-rim"><img src="${SCREENS[sc.file]}" width="486" height="1080" alt="${esc(sc.alt)}"${i === 0 ? '' : ' loading="lazy"'} decoding="async"></div>
+            <div class="phone"><img src="${SCREENS[sc.file]}" width="486" height="1080" alt="${esc(sc.alt)}"${i === 0 ? '' : ' loading="lazy"'} decoding="async"></div>
             <figcaption>${esc(sc.caption)}</figcaption>
           </figure>
         </li>`).join('');
@@ -235,11 +237,17 @@ function pageDownload(lang) {
     <h2 id="latest-h" class="section-title">${esc(d.latest)}</h2>
     ${releaseCard(latest, lang, true)}
   </section>
-  ${pre.length ? `<section aria-labelledby="pre-h"><h2 id="pre-h" class="section-title">${esc(d.prerelease)}</h2><p class="muted">${esc(d.prereleaseNote)}</p>${pre.map((r) => releaseCard(r, lang, false)).join('')}</section>` : ''}
+  ${pre.length ? `<section aria-labelledby="pre-h"><h2 id="pre-h" class="section-title">${esc(d.prerelease)}</h2><p class="muted">${esc(d.prereleaseNote)}</p><div class="card-grid">${pre.map((r) => releaseCard(r, lang, false)).join('')}</div></section>` : ''}
+  <div class="two-col">
   <section class="card" aria-labelledby="issues-h">
     <h2 id="issues-h" class="card-title">${esc(d.issuesTitle)}</h2>
     <ul class="check-list warn-list">${d.issues.map((x) => `<li>${inline(x)}</li>`).join('')}</ul>
   </section>
+  <section class="card" aria-labelledby="plat-h">
+    <h2 id="plat-h" class="card-title">${esc(d.otherPlatforms)}</h2>
+    <p>${esc(d.otherPlatformsText)}</p>
+  </section>
+  </div>
   <section class="card prose" aria-labelledby="verify-h">
     <h2 id="verify-h" class="card-title">${esc(d.verifyTitle)}</h2>
     <p>${esc(d.verifyLead)}</p>
@@ -263,11 +271,8 @@ Get-FileHash .\\${esc(name)} -Algorithm SHA256</code></pre>
   </section>
   <section aria-labelledby="older-h">
     <h2 id="older-h" class="section-title">${esc(d.older)}</h2>
-    ${stable.slice(1).map((r) => releaseCard(r, lang, false)).join('')}
-  </section>
-  <section class="card" aria-labelledby="plat-h">
-    <h2 id="plat-h" class="card-title">${esc(d.otherPlatforms)}</h2>
-    <p>${esc(d.otherPlatformsText)}</p>
+    <div class="card-grid">${stable.slice(1).map((r) => releaseCard(r, lang, false)).join('')}
+    </div>
   </section>
 </div>`;
 }
@@ -306,8 +311,8 @@ function pageChangelog(lang) {
       <div class="prose">${markdownToHtml(note)}</div>
     </article>`;
   }).join('');
-  return `${pageHeader(c.title, c.lead)}
-<div class="container stack">
+  return `${pageHeader(c.title, c.lead, 'reading')}
+<div class="reading-container stack">
   ${rel}
   <section aria-labelledby="unrel-h" class="stack">
     <h2 id="unrel-h" class="section-title">${esc(c.unreleasedTitle)}</h2>
@@ -326,14 +331,14 @@ async function pageDocs(lang) {
   const toc = [];
   const md = (await readText(`src/content/${lang}/docs.md`)).replaceAll('](/download)', `](${pagePath('download', lang)})`);
   const html = markdownToHtml(md, { headingShift: 1, toc });
-  return `${pageHeader(t.docs.title, t.docs.lead)}${withToc(t, html, toc)}`;
+  return `${pageHeader(t.docs.title, t.docs.lead, 'doc')}${withToc(t, html, toc)}`;
 }
 
 async function pagePrivacy(lang) {
   const t = I18N[lang];
   const toc = [];
   const html = markdownToHtml(await readText(`src/content/${lang}/privacy.md`), { headingShift: 1, toc });
-  return `${pageHeader(t.privacy.title, fmt(t.privacy.lead, { ref: APP.sourceRef }))}${withToc(t, html, toc)}`;
+  return `${pageHeader(t.privacy.title, fmt(t.privacy.lead, { ref: APP.sourceRef }), 'doc')}${withToc(t, html, toc)}`;
 }
 
 function depsTables(lang) {
@@ -367,7 +372,7 @@ async function pageLicenses(lang) {
   let html = markdownToHtml(await readText(`src/content/${lang}/licenses.md`), { headingShift: 1, toc });
   html = html.replace('<p>@@SOURCES@@</p>', sourcesTable(lang)).replace('<p>@@DEPS@@</p>', depsTables(lang));
   if (html.includes('@@')) throw new Error('licenses placeholder not replaced');
-  return `${pageHeader(t.licenses.title, t.licenses.lead)}${withToc(t, html, toc)}`;
+  return `${pageHeader(t.licenses.title, t.licenses.lead, 'doc')}${withToc(t, html, toc)}`;
 }
 
 function page404() {
@@ -462,13 +467,13 @@ function layout({ page, lang, title, description, body, assets }) {
   }));
 }
 
-// Liquid glass (main site .lg / .lg-rim) on every card, plain (secondary) button and the language banner.
-// Primary buttons stay solid green and ghost buttons stay transparent, as on the main site.
+// Backdrop-filter glass (.lg / .lg-rim) only on small floating surfaces: the language banner here, the header
+// pill in the template. Cards, secondary buttons and phone frames get the same look from plain CSS (translucent
+// fill + rim, see site.css) — blurring the black page behind them was invisible but cost a filter pass each.
 function glassify(html) {
   return html.replace(/class="([^"]*)"/g, (m, cls) => {
     const c = cls.split(/\s+/);
-    const add = c.includes('card') || c.includes('lang-suggest-inner')
-      || (c.includes('btn') && !c.includes('btn-primary') && !c.includes('btn-ghost'));
+    const add = c.includes('lang-suggest-inner');
     if (!add || c.includes('lg')) return m;
     return `class="${cls} lg lg-rim"`;
   });

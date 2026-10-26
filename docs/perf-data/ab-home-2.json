@@ -1,0 +1,32 @@
+{
+  "env": "headless Chromium 156 (Debian arm64), ANGLE/SwiftShader software GPU, 2 vCPU VM, 360x800 DPR3 touch emulation, Android UA",
+  "rounds": 4,
+  "report": [
+    {
+      "route": "/",
+      "variant": "base",
+      "pageHeight": 7443,
+      "backdropFilterEls": 26,
+      "lensElsSeen": 4,
+      "frameMs": {
+        "n": 60,
+        "median": 172.3,
+        "p90": 867.4,
+        "mean": 358.1
+      }
+    },
+    {
+      "route": "/",
+      "variant": "after",
+      "pageHeight": 7584,
+      "backdropFilterEls": 3,
+      "lensElsSeen": 0,
+      "frameMs": {
+        "n": 60,
+        "median": 54.5,
+        "p90": 651.9,
+        "mean": 242.2
+      }
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "label": "base",
+  "throttle": 4,
+  "ua": "headless chromium 156, SwiftShader/software GL, 360x800 DPR3 touch emulation",
+  "results": [
+    {
+      "label": "base",
+      "route": "/",
+      "run": 0,
+      "page": {
+        "h": 6530,
+        "lg": 25,
+        "lens": 3,
+        "bf": 26
+      },
+      "frameCost": {
+        "frames": 15,
+        "wallPerFrameMs": 659.3,
+        "gpuSwapPerFrameMs": 600.4,
+        "gpuFlushPerFrameMs": 0
+      },
+      "gesture": {
+        "scrollPx": 6000,
+        "wallMs": 9869,
+        "raf": {
+          "n": 597,
+          "over25": 3,
+          "over50": 2,
+          "p50": 16.7,
+          "p95": 16.8,
+          "max": 133.2
+        },
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "mainTaskMs": 1114,
+        "scrollListenerMs": 0,
+        "functionCallMs": 77.2,
+        "commitMs": 132.1,
+        "prePaintMs": 22.2
+      }
+    },
+    {
+      "label": "base",
+      "route": "/",
+      "run": 1,
+      "page": {
+        "h": 6530,
+        "lg": 25,
+        "lens": 3,
+        "bf": 26
+      },
+      "frameCost": {
+        "frames": 15,
+        "wallPerFrameMs": 192.6,
+        "gpuSwapPerFrameMs": 149.5,
+        "gpuFlushPerFrameMs": 0
+      },
+      "gesture": {
+        "scrollPx": 6000,
+        "wallMs": 8970,
+        "raf": {
+          "n": 584,
+          "over25": 4,
+          "over50": 3,
+          "p50": 16.7,
+          "p95": 16.7,
+          "max": 100
+        },
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "mainTaskMs": 1080.2,
+        "scrollListenerMs": 0,
+        "functionCallMs": 60.4,
+        "commitMs": 151.5,
+        "prePaintMs": 27.9
+      }
+    },
+    {
+      "label": "base",
+      "route": "/",
+      "run": 2,
+      "page": {
+        "h": 6530,
+        "lg": 25,
+        "lens": 3,
+        "bf": 26
+      },
+      "frameCost": {
+        "frames": 15,
+        "wallPerFrameMs": 262.2,
+        "gpuSwapPerFrameMs": 208.1,
+        "gpuFlushPerFrameMs": 0
+      },
+      "gesture": {
+        "scrollPx": 6000,
+        "wallMs": 8971,
+        "raf": {
+          "n": 583,
+          "over25": 3,
+          "over50": 2,
+          "p50": 16.7,
+          "p95": 16.8,
+          "max": 83.3
+        },
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "mainTaskMs": 1094.2,
+        "scrollListenerMs": 0,
+        "functionCallMs": 60.5,
+        "commitMs": 134.2,
+        "prePaintMs": 30.1
+      }
+    }
+  ]
+}

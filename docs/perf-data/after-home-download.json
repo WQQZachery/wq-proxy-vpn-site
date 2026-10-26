@@ -1,0 +1,151 @@
+{
+  "label": "after",
+  "throttle": 4,
+  "ua": "headless chromium 156, SwiftShader/software GL, 360x800 DPR3 touch emulation",
+  "results": [
+    {
+      "label": "after",
+      "route": "/",
+      "run": 0,
+      "page": {
+        "h": 7584,
+        "lg": 2,
+        "lens": 0,
+        "bf": 3
+      },
+      "frameCost": {
+        "frames": 16,
+        "wallPerFrameMs": 762.6,
+        "gpuSwapPerFrameMs": 699.5,
+        "gpuFlushPerFrameMs": 0
+      },
+      "gesture": {
+        "scrollPx": 6000,
+        "wallMs": 9075,
+        "raf": {
+          "n": 586,
+          "over25": 1,
+          "over50": 0,
+          "p50": 16.7,
+          "p95": 16.7,
+          "max": 50
+        },
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "mainTaskMs": 1062,
+        "scrollListenerMs": 0,
+        "functionCallMs": 57.8,
+        "commitMs": 113.4,
+        "prePaintMs": 47.1
+      }
+    },
+    {
+      "label": "after",
+      "route": "/",
+      "run": 1,
+      "page": {
+        "h": 7584,
+        "lg": 2,
+        "lens": 0,
+        "bf": 3
+      },
+      "frameCost": {
+        "frames": 16,
+        "wallPerFrameMs": 207.8,
+        "gpuSwapPerFrameMs": 177.1,
+        "gpuFlushPerFrameMs": 0
+      },
+      "gesture": {
+        "scrollPx": 6000,
+        "wallMs": 8717,
+        "raf": {
+          "n": 578,
+          "over25": 1,
+          "over50": 0,
+          "p50": 16.7,
+          "p95": 16.8,
+          "max": 33.3
+        },
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "mainTaskMs": 888.7,
+        "scrollListenerMs": 0,
+        "functionCallMs": 60.2,
+        "commitMs": 85.6,
+        "prePaintMs": 17.9
+      }
+    },
+    {
+      "label": "after",
+      "route": "/download",
+      "run": 0,
+      "page": {
+        "h": 6004,
+        "lg": 2,
+        "lens": 0,
+        "bf": 3
+      },
+      "frameCost": {
+        "frames": 14,
+        "wallPerFrameMs": 116.6,
+        "gpuSwapPerFrameMs": 89.3,
+        "gpuFlushPerFrameMs": 0
+      },
+      "gesture": {
+        "scrollPx": 6000,
+        "wallMs": 8747,
+        "raf": {
+          "n": 580,
+          "over25": 0,
+          "over50": 0,
+          "p50": 16.7,
+          "p95": 16.7,
+          "max": 16.8
+        },
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "mainTaskMs": 924.3,
+        "scrollListenerMs": 0,
+        "functionCallMs": 75.5,
+        "commitMs": 103,
+        "prePaintMs": 20.1
+      }
+    },
+    {
+      "label": "after",
+      "route": "/download",
+      "run": 1,
+      "page": {
+        "h": 6004,
+        "lg": 2,
+        "lens": 0,
+        "bf": 3
+      },
+      "frameCost": {
+        "frames": 14,
+        "wallPerFrameMs": 177.1,
+        "gpuSwapPerFrameMs": 148.9,
+        "gpuFlushPerFrameMs": 0
+      },
+      "gesture": {
+        "scrollPx": 6000,
+        "wallMs": 8743,
+        "raf": {
+          "n": 584,
+          "over25": 0,
+          "over50": 0,
+          "p50": 16.7,
+          "p95": 16.8,
+          "max": 16.8
+        },
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "mainTaskMs": 985.9,
+        "scrollListenerMs": 0,
+        "functionCallMs": 68.4,
+        "commitMs": 113,
+        "prePaintMs": 30.8
+      }
+    }
+  ]
+}

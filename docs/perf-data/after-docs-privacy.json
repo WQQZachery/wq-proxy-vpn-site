@@ -1,0 +1,151 @@
+{
+  "label": "after",
+  "throttle": 4,
+  "ua": "headless chromium 156, SwiftShader/software GL, 360x800 DPR3 touch emulation",
+  "results": [
+    {
+      "label": "after",
+      "route": "/docs",
+      "run": 0,
+      "page": {
+        "h": 10320,
+        "lg": 2,
+        "lens": 0,
+        "bf": 3
+      },
+      "frameCost": {
+        "frames": 16,
+        "wallPerFrameMs": 307.4,
+        "gpuSwapPerFrameMs": 278.6,
+        "gpuFlushPerFrameMs": 0
+      },
+      "gesture": {
+        "scrollPx": 6000,
+        "wallMs": 10067,
+        "raf": {
+          "n": 578,
+          "over25": 1,
+          "over50": 1,
+          "p50": 16.7,
+          "p95": 16.8,
+          "max": 116.7
+        },
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "mainTaskMs": 915.3,
+        "scrollListenerMs": 0,
+        "functionCallMs": 68.9,
+        "commitMs": 73.9,
+        "prePaintMs": 26.1
+      }
+    },
+    {
+      "label": "after",
+      "route": "/docs",
+      "run": 1,
+      "page": {
+        "h": 10320,
+        "lg": 2,
+        "lens": 0,
+        "bf": 3
+      },
+      "frameCost": {
+        "frames": 16,
+        "wallPerFrameMs": 329.6,
+        "gpuSwapPerFrameMs": 300.8,
+        "gpuFlushPerFrameMs": 0
+      },
+      "gesture": {
+        "scrollPx": 6000,
+        "wallMs": 9083,
+        "raf": {
+          "n": 581,
+          "over25": 1,
+          "over50": 0,
+          "p50": 16.7,
+          "p95": 16.7,
+          "max": 33.3
+        },
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "mainTaskMs": 892.1,
+        "scrollListenerMs": 0,
+        "functionCallMs": 73.1,
+        "commitMs": 102.8,
+        "prePaintMs": 18.1
+      }
+    },
+    {
+      "label": "after",
+      "route": "/privacy",
+      "run": 0,
+      "page": {
+        "h": 13660,
+        "lg": 2,
+        "lens": 0,
+        "bf": 3
+      },
+      "frameCost": {
+        "frames": 16,
+        "wallPerFrameMs": 161.6,
+        "gpuSwapPerFrameMs": 133.1,
+        "gpuFlushPerFrameMs": 0
+      },
+      "gesture": {
+        "scrollPx": 6000,
+        "wallMs": 8720,
+        "raf": {
+          "n": 577,
+          "over25": 0,
+          "over50": 0,
+          "p50": 16.7,
+          "p95": 16.7,
+          "max": 16.8
+        },
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "mainTaskMs": 939.4,
+        "scrollListenerMs": 0,
+        "functionCallMs": 63.3,
+        "commitMs": 98.7,
+        "prePaintMs": 29.3
+      }
+    },
+    {
+      "label": "after",
+      "route": "/privacy",
+      "run": 1,
+      "page": {
+        "h": 13660,
+        "lg": 2,
+        "lens": 0,
+        "bf": 3
+      },
+      "frameCost": {
+        "frames": 16,
+        "wallPerFrameMs": 142.2,
+        "gpuSwapPerFrameMs": 115.7,
+        "gpuFlushPerFrameMs": 0
+      },
+      "gesture": {
+        "scrollPx": 6000,
+        "wallMs": 8717,
+        "raf": {
+          "n": 578,
+          "over25": 0,
+          "over50": 0,
+          "p50": 16.7,
+          "p95": 16.7,
+          "max": 16.8
+        },
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "mainTaskMs": 833.8,
+        "scrollListenerMs": 0,
+        "functionCallMs": 48.7,
+        "commitMs": 84.8,
+        "prePaintMs": 36.8
+      }
+    }
+  ]
+}

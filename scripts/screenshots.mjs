@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Browser checks against a running server (wrangler dev): full-page screenshots at 360/768/1280,
+// Browser checks against a running server (wrangler dev): full-page screenshots at 360/390/600/768/1024/1440,
 // horizontal-overflow detection, console/CSP errors, mobile menu, copy button, language
 // suggestion + preference, no-JS navigation, and an axe-core WCAG 2 AA scan.
 //
@@ -15,7 +15,7 @@ import { PAGES, LANGS, pagePath } from './lib/site.mjs';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const BASE = process.env.BASE || 'http://127.0.0.1:8787';
 const OUT = path.join(ROOT, 'screenshots');
-const WIDTHS = (process.env.WIDTHS || '360,768,1280').split(',').map(Number);
+const WIDTHS = (process.env.WIDTHS || '360,390,600,768,1024,1440').split(',').map(Number);
 const PHASES = (process.env.PHASES || 'shots,axe,interact').split(',');
 const AXE = await readFile(path.join(ROOT, 'node_modules', 'axe-core', 'axe.min.js'), 'utf8');
 

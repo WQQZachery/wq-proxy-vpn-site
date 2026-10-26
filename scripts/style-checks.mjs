@@ -73,10 +73,13 @@ console.log('fallback (stylesheet served without @supports(backdrop-filter) bloc
     const removed = stripped.count;
     const info = await page.evaluate((removed) => {
       const cs = (s) => { const e = document.querySelector(s); if (!e) return null; const c = getComputedStyle(e); return { bg: c.backgroundColor, bf: c.backdropFilter }; };
-      return { removed, card: cs('.card:not(.notice-warn)'), header: cs('.header-inner'), btn: cs('.btn:not(.btn-primary):not(.btn-ghost)') };
+      return { removed, card: cs('.card:not(.notice-warn)'), header: cs('.header-glass'), btn: cs('.btn:not(.btn-primary):not(.btn-ghost)') };
     }, removed);
+    // Since perf/layout-scroll, cards and buttons never use backdrop-filter (translucent fill + rim in every
+    // browser); only the header glass / language banner / mobile menu do, and they must fall back to opaque.
     const opaque = (x) => x && /^rgb\(/.test(x.bg) && (x.bf === 'none' || !x.bf);
-    ok(info.removed >= 4 && opaque(info.card) && opaque(info.header), `${url}: ${info.removed} @supports(backdrop-filter) blocks removed; card ${info.card?.bg}, header ${info.header?.bg}, button ${info.btn?.bg}`);
+    const noBf = (x) => x && (x.bf === 'none' || !x.bf);
+    ok(info.removed >= 2 && noBf(info.card) && (!info.btn || noBf(info.btn)) && opaque(info.header), `${url}: ${info.removed} @supports(backdrop-filter) blocks removed; header glass ${info.header?.bg}; card/button backdrop-filter ${info.card?.bf}/${info.btn ? info.btn.bf : 'no secondary button'}`);
     await page.evaluate(AXE);
     const v = await page.evaluate(async () => (await axe.run(document, { runOnly: { type: 'rule', values: ['color-contrast'] } })).violations.length);
     ok(v === 0, `${url}: axe color-contrast violations in fallback = ${v}`);

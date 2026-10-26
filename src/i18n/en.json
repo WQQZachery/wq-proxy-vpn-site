@@ -177,12 +177,35 @@
       }
     ],
     "screensTitle": "Screenshots",
-    "screensLead": "There are no confirmed, publishable app screenshots yet. The boxes below are placeholders until the maintainer supplies real ones.",
-    "screenPlaceholder": "Screenshot coming soon",
-    "screenNames": [
-      "Home / connect",
-      "Node list",
-      "Diagnostics"
+    "screensLead": "Real Android device screenshots taken on 2026-10-25 (the app version is not visible in them). The exit IP on the diagnostics screen is blurred.",
+    "screensBadge": "Real device screenshots · 2026-10-25",
+    "screensHint": "Swipe for more",
+    "screens": [
+      {
+        "file": "home",
+        "caption": "Home: connected",
+        "alt": "Home screen: the power button shows “已连接” (connected) with a 00:00:06 timer; current node KR-N-1 (VLESS · tcp · REALITY, 139 ms, TCP only); routing mode set to automatic split routing; a live speed card below shows 69.1 Kbps down, 22.2 Kbps up and a 60-second chart."
+      },
+      {
+        "file": "nodes",
+        "caption": "Node list and latency test",
+        "alt": "Nodes screen: 247 nodes, 247 enabled; a “tested through the core proxy” badge with progress 21/39 at concurrency 4; a search field and filters (custom groups / all / enabled / available / failed); JP, SG and US nodes listed with latencies from 184 ms to 718 ms."
+      },
+      {
+        "file": "diagnostics",
+        "caption": "Diagnostics: exit IP and IP reputation",
+        "alt": "Diagnostics screen: test path through the VPN tunnel (node KR-N-1, split routing); a “speed test” entry; exit IP (blurred), network Amazon.com, Inc. AS16509, location South Korea / Incheon, source api.ip.sb; AbuseIPDB reputation 0/100 with no abuse reports in the last 90 days."
+      },
+      {
+        "file": "speedtest",
+        "caption": "Speed test (M-Lab ndt7)",
+        "alt": "Speed test screen: the progress bar is at the download stage and the gauge shows 80.0 Mbps (live, smoothed); latency 97 ms, jitter 101.6 ms, packet loss “not supported”; a measured speed curve; test server M-Lab icn03 (M-Lab ndt7 · Seoul, KR); a “cancel test” button."
+      },
+      {
+        "file": "settings",
+        "caption": "Settings: routing mode and DNS",
+        "alt": "Settings screen: routing modes global proxy, automatic split routing (selected) and direct; a note that this version ships no GeoIP/GeoSite rule sets; direct and proxy domain suffixes not set; remote DNS https://1.1.1.1/dns-query, direct DNS 223.5.5.5."
+      }
     ],
     "compatTitle": "Compatibility",
     "compat": [

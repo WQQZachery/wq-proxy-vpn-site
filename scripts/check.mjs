@@ -203,7 +203,8 @@ async function main() {
   for (const h of ['Content-Security-Policy:', "frame-ancestors 'none'", "script-src 'self'", 'X-Content-Type-Options: nosniff', 'Referrer-Policy:', 'Permissions-Policy:', 'immutable']) {
     if (!headers.includes(h)) err('_headers', `missing ${h}`);
   }
-  if (/unsafe-inline|unsafe-eval/.test(headers)) err('_headers', 'CSP must not allow unsafe-inline/unsafe-eval');
+  // Owner allowed Cloudflare-injected inline loader in script-src (2026-10-26); styles stay strict.
+  if (/unsafe-eval/.test(headers) || /style-src[^;]*unsafe-inline/.test(headers)) err('_headers', 'CSP must not allow unsafe-eval or inline styles');
 
   // No secrets / binaries in the output
   for (const f of files) {

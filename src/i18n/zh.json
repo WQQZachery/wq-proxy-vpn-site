@@ -183,12 +183,35 @@
       }
     ],
     "screensTitle": "应用截图",
-    "screensLead": "目前还没有经过确认、可公开使用的应用截图。以下是占位框，待维护者提供真实截图后替换。",
-    "screenPlaceholder": "截图待补充",
-    "screenNames": [
-      "首页 / 连接",
-      "节点列表",
-      "检测中心"
+    "screensLead": "以下为 2026-10-25 在 Android 真机上截取的应用界面（截图中未显示版本号）。检测中心截图里的出口 IP 已打码。",
+    "screensBadge": "真机截图 · 2026-10-25",
+    "screensHint": "左右滑动查看更多",
+    "screens": [
+      {
+        "file": "home",
+        "caption": "首页：已连接",
+        "alt": "应用首页截图：电源按钮显示“已连接”，计时 00:00:06；当前节点 KR-N-1（VLESS · tcp · REALITY，139 ms，仅 TCP）；路由模式为自动分流；下方是实时速度卡片，显示下载 69.1 Kbps、上传 22.2 Kbps 及最近 60 秒曲线。"
+      },
+      {
+        "file": "nodes",
+        "caption": "节点列表与延迟检测",
+        "alt": "节点页截图：共 247 个节点、247 个已启用；顶部显示“经内核代理检测”，进度 21/39、并发 4；有搜索框和“自定义分组 / 全部 / 已启用 / 可用 / 失败”筛选；分组下列出 JP、SG、US 节点及 184 ms 到 718 ms 的延迟。"
+      },
+      {
+        "file": "diagnostics",
+        "caption": "检测中心：出口 IP 与 IP 信誉",
+        "alt": "检测中心截图：当前检测路径经 VPN 隧道（节点 KR-N-1，自动分流）；“主动测速”入口；出口 IP（已打码）、网络 Amazon.com, Inc. AS16509、归属地 South Korea / Incheon，数据来源 api.ip.sb；AbuseIPDB 信誉 0/100，近 90 天无滥用举报。"
+      },
+      {
+        "file": "speedtest",
+        "caption": "主动测速（M-Lab ndt7）",
+        "alt": "主动测速截图：进度停在“下载”阶段，仪表盘显示 80.0 Mbps（实时，平滑显示）；延迟 97 ms、抖动 101.6 ms、丢包“不支持”；实测速度曲线；测试服务器 M-Lab icn03（M-Lab ndt7 · Seoul, KR）；底部“取消测试”按钮。"
+      },
+      {
+        "file": "settings",
+        "caption": "设置：路由模式与 DNS",
+        "alt": "设置页截图：路由模式可选全局代理、自动分流（已选中）、直连模式；说明本版本未内置 GeoIP/GeoSite 规则集；直连 / 代理域名后缀均未设置；远程 DNS 为 https://1.1.1.1/dns-query，直连 DNS 为 223.5.5.5。"
+      }
     ],
     "compatTitle": "兼容性",
     "compat": [

@@ -201,3 +201,12 @@ now `tabindex="0"`), full-width punctuation in English release metadata, TOC num
   a production test.
 - `wrangler dev` / `wrangler deploy --dry-run` were run before `send_metrics: false` was added to
   `wrangler.jsonc`; wrangler may have attempted to send anonymous usage metrics. No login, no upload.
+
+## 2026-10-26 更新：真机截图、主站液态玻璃、菜单动效、CSP 放行 Cloudflare
+
+- 首页换成 5 张真机截图（检测中心截图的出口 IP 已打码，元数据已清除）。
+- 液态玻璃移植自主站：SVG feDisplacementMap 折射（RGB 色散）+ 磨砂 + 高光描边，背景为主站彩色光球。
+- 手机菜单打开/关闭动效（opacity .22s + transform .32s cubic-bezier(.22,1,.36,1)），汉堡变 ×，Esc/点外部关闭，减少动态效果时即时切换。
+- CSP 按所有者要求放行 Cloudflare 自动注入脚本：script-src 加 'unsafe-inline' 与 https://static.cloudflareinsights.com，connect-src 加 https://cloudflareinsights.com，frame-src 'self'。style-src 仍禁止内联。
+- 已通过：npm run build:prod、npm run check、scripts/test-routes.sh。
+- 未执行：浏览器截图、axe、交互与样式测试（沙箱根分区被重置，chromium 不在，且无 root 重新安装；playwright 浏览器下载 403）。视觉效果需在线上人工确认。

@@ -57,6 +57,19 @@ function render(tpl, vars) {
 }
 
 // ---------------------------------------------------------------- assets
+const SCREENS = {};
+async function screenAssets() {
+  const dir = path.join(ROOT, 'src', 'screens');
+  await mkdir(path.join(DIST, 'assets', 'screens'), { recursive: true });
+  for (const f of (await readdir(dir)).filter((n) => n.endsWith('.webp')).sort()) {
+    const base = f.replace(/\.webp$/, '');
+    SCREENS[base] = await hashedAsset(`src/screens/${f}`, 'assets/screens', base, 'webp');
+  }
+  for (const lang of LANGS) for (const sc of I18N[lang].home.screens) {
+    if (!SCREENS[sc.file]) throw new Error(`screenshot missing: src/screens/${sc.file}.webp`);
+  }
+}
+
 async function hashedAsset(src, outDir, base, ext) {
   const buf = await readFile(path.join(ROOT, src));
   const h = createHash('sha256').update(buf).digest('hex').slice(0, 10);
@@ -98,11 +111,13 @@ function pageHome(lang) {
         <p>${inline(f.text)}</p>
         ${evidenceLinks(f.files, t, lang)}
       </li>`).join('');
-  const screens = h.screenNames.map((n) => `
-      <figure class="screen-ph">
-        <div class="screen-ph-frame" role="img" aria-label="${esc(h.screenPlaceholder)}${PUNCT[lang].colon}${esc(n)}"><span>${esc(h.screenPlaceholder)}</span></div>
-        <figcaption>${esc(n)}</figcaption>
-      </figure>`).join('');
+  const screens = h.screens.map((sc, i) => `
+        <li class="screen">
+          <figure>
+            <div class="phone lg lg-rim"><img src="${SCREENS[sc.file]}" width="486" height="1080" alt="${esc(sc.alt)}"${i === 0 ? '' : ' loading="lazy"'} decoding="async"></div>
+            <figcaption>${esc(sc.caption)}</figcaption>
+          </figure>
+        </li>`).join('');
   return `
 <section class="hero">
   <div class="container hero-inner">
@@ -136,10 +151,16 @@ function pageHome(lang) {
 </section>
 <section class="section" aria-labelledby="screens">
   <div class="container">
-    <h2 id="screens" class="section-title">${esc(h.screensTitle)}</h2>
-    <p class="section-lead">${esc(h.screensLead)}</p>
-    <div class="screen-grid">${screens}
+    <div class="screens-head">
+      <h2 id="screens" class="section-title">${esc(h.screensTitle)}</h2>
+      <span class="badge">${esc(h.screensBadge)}</span>
     </div>
+    <p class="section-lead">${esc(h.screensLead)}</p>
+    <p class="screens-hint" aria-hidden="true">${esc(h.screensHint)}</p>
+  </div>
+  <div class="screen-scroller" tabindex="0" role="region" aria-label="${esc(h.screensTitle)}">
+    <ul class="screen-list">${screens}
+    </ul>
   </div>
 </section>
 <section class="section" aria-labelledby="compat">
@@ -407,7 +428,7 @@ function layout({ page, lang, title, description, body, assets }) {
   const disclaimer = fmt(t.footer.disclaimer, { ref: APP.sourceRef, commit: short(APP.appCommit) });
   let seo = seoLinks(page, lang);
   if (page === '404') seo = '<meta name="robots" content="noindex">\n';
-  return render(LAYOUT, {
+  return glassify(render(LAYOUT, {
     htmlLang: t.htmlLang,
     title,
     description,
@@ -438,6 +459,18 @@ function layout({ page, lang, title, description, body, assets }) {
     footerHomeExt: t.common.external,
     footerLinks,
     footerDisclaimer: disclaimer,
+  }));
+}
+
+// Liquid glass (main site .lg / .lg-rim) on every card, plain (secondary) button and the language banner.
+// Primary buttons stay solid green and ghost buttons stay transparent, as on the main site.
+function glassify(html) {
+  return html.replace(/class="([^"]*)"/g, (m, cls) => {
+    const c = cls.split(/\s+/);
+    const add = c.includes('card') || c.includes('lang-suggest-inner')
+      || (c.includes('btn') && !c.includes('btn-primary') && !c.includes('btn-ghost'));
+    if (!add || c.includes('lg')) return m;
+    return `class="${cls} lg lg-rim"`;
   });
 }
 
@@ -459,6 +492,7 @@ async function main() {
     js: await hashedAsset('public/assets/js/site.js', 'assets', 'site', 'js'),
     early: await hashedAsset('public/assets/js/early.js', 'assets', 'early', 'js'),
   };
+  await screenAssets();
 
   const builders = { home: pageHome, download: pageDownload, changelog: pageChangelog, docs: pageDocs, privacy: pagePrivacy, licenses: pageLicenses };
   const written = [];

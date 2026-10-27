@@ -127,16 +127,13 @@
   // A per-element SVG filter: canvas-rendered rounded-rect SDF displacement map (smoothstep bezel) fed to
   // three feDisplacementMap passes for a slight chromatic split.
   // Perf budget: the filter re-samples and displaces the backdrop on EVERY frame the element is on screen, so
-  // it is applied only to elements marked [data-lens] (the header pill), and not at all on touch-first or
-  // low-end devices (coarse pointer without hover, ≤4 CPU cores or ≤4 GB RAM), where the frosted .lg stays.
+  // it is applied only to elements marked [data-lens] (the header pill). Enabled on all Chromium devices incl.
+  // phones at the owner's request (2026-10-27); cards stay frosted-free for scroll performance.
   (function () {
     var ua = navigator.userAgent;
     var chromium = /Chrome\/|Chromium\/|Edg\//.test(ua) && !/CriOS|EdgiOS|FxiOS/.test(ua) && !/Firefox\//.test(ua);
     if (!chromium || !window.CSS || !CSS.supports('backdrop-filter', 'url(#x)')) return;
     if (window.matchMedia('(prefers-reduced-transparency: reduce), (prefers-contrast: more)').matches) return;
-    var touchFirst = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-    var lowEnd = (navigator.hardwareConcurrency || 8) <= 4 || (navigator.deviceMemory || 8) <= 4;
-    if ((touchFirst || lowEnd) && document.documentElement.getAttribute('data-lens') !== 'force') return;
     var NS = 'http://www.w3.org/2000/svg';
     var defs = document.querySelector('#lgdefs defs');
     if (!defs) return;

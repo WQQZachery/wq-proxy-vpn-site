@@ -1,4 +1,5 @@
 # Cloudflare Workers Static Assets response headers.
+# HSTS phase 1 (2026-10-27): max-age=86400 because not every *.wqzachery.dpdns.org subdomain is confirmed HTTPS-only; raise to 31536000 after observation.
 # CSP: self only, except Cloudflare-injected scripts (Web Analytics beacon + JS detections inline loader), allowed at the owner's request 2026-10-26. No inline styles, no framing.
 /*
   Content-Security-Policy: default-src 'none'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; frame-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
@@ -6,6 +7,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: accelerometer=(), autoplay=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
   X-Frame-Options: DENY
+  Strict-Transport-Security: max-age=86400; includeSubDomains
   Cross-Origin-Opener-Policy: same-origin
   Cache-Control: public, max-age=300, must-revalidate
 

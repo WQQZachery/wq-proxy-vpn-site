@@ -200,7 +200,7 @@ async function main() {
 
   // Headers file
   const headers = await readFile(path.join(DIST, '_headers'), 'utf8');
-  for (const h of ['Content-Security-Policy:', "frame-ancestors 'none'", "script-src 'self'", 'X-Content-Type-Options: nosniff', 'Referrer-Policy:', 'Permissions-Policy:', 'immutable']) {
+  for (const h of ['Content-Security-Policy:', "frame-ancestors 'none'", "script-src 'self'", 'X-Content-Type-Options: nosniff', 'Referrer-Policy:', 'Permissions-Policy:', 'Strict-Transport-Security:', 'immutable']) {
     if (!headers.includes(h)) err('_headers', `missing ${h}`);
   }
   // Owner allowed Cloudflare-injected inline loader in script-src (2026-10-26); styles stay strict.

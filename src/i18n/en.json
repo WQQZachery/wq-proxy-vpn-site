@@ -180,6 +180,7 @@
     "screensLead": "Real Android device screenshots taken on 2026-10-25 (the app version is not visible in them). The exit IP on the diagnostics screen is blurred.",
     "screensBadge": "Real device screenshots · 2026-10-25",
     "screensHint": "Swipe for more",
+    "screensScrollerLabel": "App screenshots scroller",
     "screens": [
       {
         "file": "home",

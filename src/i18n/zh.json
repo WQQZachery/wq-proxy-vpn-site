@@ -186,6 +186,7 @@
     "screensLead": "以下为 2026-10-25 在 Android 真机上截取的应用界面（截图中未显示版本号）。检测中心截图里的出口 IP 已打码。",
     "screensBadge": "真机截图 · 2026-10-25",
     "screensHint": "左右滑动查看更多",
+    "screensScrollerLabel": "应用截图滚动区域",
     "screens": [
       {
         "file": "home",

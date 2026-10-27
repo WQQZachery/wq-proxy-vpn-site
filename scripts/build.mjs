@@ -160,7 +160,7 @@ function pageHome(lang) {
     <p class="section-lead">${esc(h.screensLead)}</p>
     <p class="screens-hint" aria-hidden="true">${esc(h.screensHint)}</p>
   </div>
-  <div class="screen-scroller" tabindex="0" role="region" aria-label="${esc(h.screensTitle)}">
+  <div class="screen-scroller" tabindex="0" role="region" aria-label="${esc(h.screensScrollerLabel)}">
     <ul class="screen-list">${screens}
     </ul>
   </div>
